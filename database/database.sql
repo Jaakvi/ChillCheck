@@ -29,7 +29,6 @@ CREATE TABLE StressHistory (
 CREATE TABLE Professionals (
     User_id INT NOT NULL AUTO_INCREMENT,
     username VARCHAR(50) NOT NULL UNIQUE PRIMARY KEY ,
-    comment Text,
     likes INT,
     FOREIGN KEY (entry_id) REFERENCES DiaryEntries(entry_id),
     FOREIGN KEY (username) REFERENCES Users(username)
