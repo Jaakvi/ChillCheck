@@ -27,11 +27,11 @@ CREATE TABLE StressHistory (
 );
 
 CREATE TABLE Professionals (
-    User_id INT NOT NULL AUTO_INCREMENT,
-    username VARCHAR(50) NOT NULL UNIQUE PRIMARY KEY ,
-    likes INT,
-    FOREIGN KEY (entry_id) REFERENCES DiaryEntries(entry_id),
-    FOREIGN KEY (username) REFERENCES Users(username)
+    pro_id INT NOT NULL AUTO_INCREMENT,
+    user_id INT NOT NULL AUTO_INCREMENT,
+    pro_username VARCHAR(50) NOT NULL UNIQUE PRIMARY KEY ,
+    FOREIGN KEY (test_id) REFERENCES StressHistory(test_id),
+    FOREIGN KEY (user_id) REFERENCES Users(user_id)
 
 );
 
