@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rekisteröityminen</title>
+    <link rel="stylesheet" href="kirjautuminen.css">
+  
+</head>
+<body>
+    <nav>
+        <button id="home">Etusivu</button>
+
+        <button id="login">Kirjaudu sisään</button>
+      </nav>
+ <!-- BACKGROUND-WRAPPER -->
+  <main class="background_wrapper">
+    <h1>ChillCheck</h1>
+      <div class="login_form_wrapper">
+        <!-- FORM -->
+        <form action="#" class="login__form" id="register_form">
+          <h1 class="title">Rekisteröityminen</h1>
+
+           
+
+          <div class="login_form_content">
+
+            <!--REGISTER CONTENT BOX 4-->
+           <div class="login_content_box">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+
+            <div class="login_content_box--input">
+              <input
+                type="text"
+                name="firstname"
+                placeholder=" "
+                class="login__input firstname--input"
+                required
+              />
+              <label for="p" class="login__label">Etunimi</label>
+
+            </div>
+          </div>
+
+            <!--REGISTER CONTENT BOX 7-->
+            <div class="login_content_box">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+    
+                <div class="login_content_box--input">
+                  <input
+                    type="text"
+                    name="lastname"
+                    placeholder=" "
+                    class="login__input lastname--input"
+                    required
+                  />
+                  <label for="p" class="login__label">Sukunimi</label>
+    
+                </div>
+              </div>
+    
+
+            <!-- REGISTER-CONTENT-BOX-1 -->
+            <div class="login_content_box">
+              <ion-icon name="person-outline"></ion-icon>
+
+              <div class="login_content_box--input">
+                <input
+                  type="text"
+                  name="username"
+                  placeholder=" "
+                  minlength="3"
+                  maxlength="20"
+                  class="login__input username--input"
+                  required
+                />
+                <label for="username" class="login__label">Käyttäjätunnus</label>
+              </div>
+            </div>
+            <!-- REGISTER-CONTENT-BOX-2 -->
+            <div class="login_content_box">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+
+              <div class="login_content_box--input">
+                <input
+                  type="password"
+                  name="password"
+                  placeholder=" "
+                  minlength="8"
+                  maxlength="128"
+                  class="login__input password--input"
+                  required
+                />
+                <label for="password" class="login__label">Salasana</label>
+                <ion-icon
+                  class="password__hidden"
+                  id="password_hidden"
+                  name="eye-off-outline"
+                ></ion-icon>
+              </div>
+            </div>
+
+             <!-- REGISTER-CONTENT-BOX-5 -->
+             <div class="login_content_box">
+                <ion-icon name="lock-closed-outline"></ion-icon>
+  
+                <div class="login_content_box--input">
+                  <input
+                    type="password"
+                    name="password"
+                    placeholder=" "
+                    minlength="8"
+                    maxlength="128"
+                    class="login__input password--input"
+                    required
+                  />
+                  <label for="password" class="login__label">Vahvista salasana</label>
+                  <ion-icon
+                    class="password__hidden"
+                    id="password_hidden"
+                    name="eye-off-outline"
+                  ></ion-icon>
+                </div>
+              </div>
+
+            <!-- REGISTER-CONTENT-BOX-3 -->
+
+                 <div class="login_content_box">
+              <ion-icon name="lock-closed-outline"></ion-icon>
+
+              <div class="login_content_box--input">
+                <input
+                  type="email"
+                  name="email"
+                  placeholder=" "
+                  pattern=".+@example\.fi"
+                  class="login__input email--input"
+                  required
+                />
+                <label for="p" class="login__label">Sähköposti</label>
+
+              </div>
+            </div>
+
+          
+
+
+            <!-- LOGIN BUTTON -->
+            <button class="button__login" id="register_button">Rekisteröidy</button>
+
+            <!-- REGISTER LOGIN -->
+            <p class="register__login text--sm">
+              Oletko jo rekisteröitynyt <a href="kirjautuminen.html">Kirjaudu sisään</a>
+            </p>
+          </div>
+        </form>
+      </div>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+html {
+    background: rgb(219,165,56);
+    background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat;
+    object-fit: fill;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 70px;
+    background-color: rgb(196, 175, 175);
+    background-color: darksalmon;
+}
+
+#nappi {
+    display: flex;
+    align-items: right;
+}
+
+body {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    
+   
+} 
+section {
+ margin: 30px;
+}
+
+p {
+    display: flex;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 70px;
+  margin: 10px;
+  color: white;
+}
+
+h2 {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+  font-size: 40px;
+  color: white;
+  margin: 10px;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+#login {
+    color: white;
+    width: 100px;
+    background: rgb(219,165,56);
+    background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat;
+}
+#homepage {
+  color: white;
+  width: 100px;
+  background: rgb(219,165,56);
+  background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat; 
+}
+
+#profile {
+  color: white;
+  width: 100px;
+  background: rgb(219,165,56);
+  background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat; 
+}
+#history {
+  color: white;
+  width: 100px;
+  background: rgb(219,165,56);
+  background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat; 
+}
+#picture {
+  display: flex;
+  justify-content: space-around;
+
+}
+#meditating {
+  width: 20vh;
+}
+
+#leftpicture {
+  display: flex;
+  justify-content: left;
+}
+
+#human_meditating {
+  width: 30vh;
+}
