@@ -1,0 +1,33 @@
+{"level":30,"time":"2024-04-08T07:24:40.284Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Listening on 58856"}
+(node:28720) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2024-04-08T07:24:40.489Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2024-04-08T07:24:42.081Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Adding browser to stack: chromium, version: 121.0.6167.57"}
+{"level":30,"time":"2024-04-08T07:24:42.082Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"End of node method newBrowser"}
+{"level":30,"time":"2024-04-08T07:24:42.082Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2024-04-08T07:24:42.090Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-04-08T07:24:42.106Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Changed active context"}
+{"level":30,"time":"2024-04-08T07:24:42.089Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Start of node method newPage"}
+{"level":30,"time":"2024-04-08T07:24:42.432Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Video path: undefined"}
+{"level":30,"time":"2024-04-08T07:24:42.432Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Changed active page"}
+{"level":30,"time":"2024-04-08T07:24:44.532Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"End of node method newPage"}
+{"level":30,"time":"2024-04-08T07:24:44.545Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Start of node method click"}
+{"level":30,"time":"2024-04-08T07:24:44.546Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Strict mode is enabled, find Locator with id=login in page."}
+{"level":30,"time":"2024-04-08T07:24:44.652Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"End of node method click"}
+{"level":30,"time":"2024-04-08T07:24:44.660Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Start of node method typeText"}
+{"level":30,"time":"2024-04-08T07:24:44.661Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Strict mode is enabled, find Locator with [class=\"login__input username--input\"] in page."}
+{"level":30,"time":"2024-04-08T07:24:54.677Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Error of node method  typeText"}
+================= Original suppressed error =================
+locator.fill: Timeout 10000ms exceeded.
+Call log:
+  [2m- waiting for locator('[class="login__input username--input"]')[22m
+
+    at typeText (C:\Users\zymet\anaconda3\Lib\site-packages\Browser\wrapper\index.js:9704:19)
+    at async PlaywrightServer.typeText (C:\Users\zymet\anaconda3\Lib\site-packages\Browser\wrapper\index.js:10708:28) {
+  name: 'TimeoutError'
+}
+=============================================================
+{"level":30,"time":"2024-04-08T07:24:54.760Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Start of node method takeScreenshot"}
+{"level":30,"time":"2024-04-08T07:24:54.761Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","Take screenshot with options: ":{"path":"C:\\Users\\zymet\\OneDrive\\Työpöytä\\Chillcheck\\results\\browser\\screenshot\\fail-screenshot-1.png","fileType":"png","fullPage":false,"timeout":10000,"omitBackground":false}}
+{"level":30,"time":"2024-04-08T07:24:55.120Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"End of node method takeScreenshot"}
+{"level":30,"time":"2024-04-08T07:40:48.632Z","pid":28720,"hostname":"LAPTOP-TVBC5V1G","msg":"Removed page=f387311a-6074-452e-a92a-b40f2e038e4d from context=66fa1d8b-9fba-4744-8003-375e860912ca page stack"}

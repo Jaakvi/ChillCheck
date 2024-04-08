@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.0 (Python 3.11.4 on win32)" generated="2024-04-08T10:39:14.532257" rpa="false" schemaversion="5">
+<suite id="s1" name="Chillcheck" source="C:\Users\zymet\OneDrive\Työpöytä\Chillcheck">
+<suite id="s1-s1" name="Kirjautuminen" source="C:\Users\zymet\OneDrive\Työpöytä\Chillcheck\kirjautuminen">
+<suite id="s1-s1-s1" name="Kirjautuminen" source="C:\Users\zymet\OneDrive\Työpöytä\Chillcheck\kirjautuminen\kirjautuminen.robot">
+<test id="s1-s1-s1-t1" name="Test Web Form" line="6">
+<kw name="New Browser" owner="Browser">
+<msg time="2024-04-08T10:39:14.718438" level="INFO">{"browser": "chromium", "headless": false, "chromiumSandbox": false, "devtools": false, "handleSIGHUP": true, "handleSIGINT": true, "handleSIGTERM": true, "slowMo": 0.0, "timeout": 30000.0, "tracesDir": "C:\\Users\\zymet\\OneDrive\\Ty\u00f6p\u00f6yt\u00e4\\Chillcheck\\results\\browser\\traces\\3b2515a9-b8ab-4ae6-aadd-8ff6aca208fa"}</msg>
+<msg time="2024-04-08T10:39:14.718438" level="INFO">Starting Browser process C:\Users\zymet\anaconda3\Lib\site-packages\Browser\wrapper\index.js using port 59164</msg>
+<msg time="2024-04-08T10:39:14.718438" level="INFO">Node startup parameters: ['node', 'C:\\Users\\zymet\\anaconda3\\Lib\\site-packages\\Browser\\wrapper\\index.js', '59164']</msg>
+<msg time="2024-04-08T10:39:15.512506" level="INFO">Successfully created browser with options: {"browser":"chromium","headless":false,"chromiumSandbox":false,"devtools":false,"handleSIGHUP":true,"handleSIGINT":true,"handleSIGTERM":true,"slowMo":0,"timeout":30000,"tracesDir":"C:\\Users\\zymet\\OneDrive\\Työpöytä\\Chillcheck\\results\\browser\\traces\\3b2515a9-b8ab-4ae6-aadd-8ff6aca208fa"}</msg>
+<arg>chromium</arg>
+<arg>headless=No</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Create a new playwright Browser with specified options.</doc>
+<status status="PASS" start="2024-04-08T10:39:14.716435" elapsed="0.797122"/>
+</kw>
+<kw name="New Page" owner="Browser">
+<msg time="2024-04-08T10:39:17.630695" level="INFO">Successfully initialized new page object and opened url: http://localhost:5173/public/etusivu.html</msg>
+<msg time="2024-04-08T10:39:17.631709" level="INFO">No context was open. New context was automatically opened when this page is created.</msg>
+<arg>http://localhost:5173/public/etusivu.html</arg>
+<tag>BrowserControl</tag>
+<tag>Setter</tag>
+<doc>Open a new Page.</doc>
+<status status="PASS" start="2024-04-08T10:39:15.514770" elapsed="2.116939"/>
+</kw>
+<kw name="Click" owner="Browser">
+<arg>id=login</arg>
+<arg>left</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-04-08T10:39:17.632865" elapsed="0.102954"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2024-04-08T10:39:17.737829" level="INFO">Types the text 'testikayttaja' in the given field.</msg>
+<arg>[class="login__input username--input"]</arg>
+<arg>${Username}</arg>
+<arg>delay=0.1 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-04-08T10:39:17.735819" elapsed="1.443096"/>
+</kw>
+<kw name="Type Text" owner="Browser">
+<msg time="2024-04-08T10:39:19.180421" level="INFO">Types the text '12345678' in the given field.</msg>
+<arg>[class="login__input password--input"]</arg>
+<arg>${Password}</arg>
+<arg>delay=0.1 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Types the given ``txt`` into the text field found by ``selector``.</doc>
+<status status="PASS" start="2024-04-08T10:39:19.180421" elapsed="0.879926"/>
+</kw>
+<kw name="Click With Options" owner="Browser">
+<arg>[id="login_button"]</arg>
+<arg>delay=2 s</arg>
+<tag>PageContent</tag>
+<tag>Setter</tag>
+<doc>Simulates mouse click on the element found by ``selector``.</doc>
+<status status="PASS" start="2024-04-08T10:39:20.061356" elapsed="2.064381"/>
+</kw>
+<status status="PASS" start="2024-04-08T10:39:14.715430" elapsed="7.411319"/>
+</test>
+<status status="PASS" start="2024-04-08T10:39:14.560359" elapsed="7.573958"/>
+</suite>
+<status status="PASS" start="2024-04-08T10:39:14.558355" elapsed="7.581118"/>
+</suite>
+<status status="PASS" start="2024-04-08T10:39:14.537270" elapsed="7.604231"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Chillcheck">Chillcheck</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Kirjautuminen">Chillcheck.Kirjautuminen</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1-s1" name="Kirjautuminen">Chillcheck.Kirjautuminen.Kirjautuminen</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,26 @@
+{"level":30,"time":"2024-04-08T07:39:15.049Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Listening on 59164"}
+(node:11632) DeprecationWarning: Calling start() is no longer necessary. It can be safely omitted.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+{"level":30,"time":"2024-04-08T07:39:15.265Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Start of node method newBrowser"}
+{"level":30,"time":"2024-04-08T07:39:15.511Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Adding browser to stack: chromium, version: 121.0.6167.57"}
+{"level":30,"time":"2024-04-08T07:39:15.511Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"End of node method newBrowser"}
+{"level":30,"time":"2024-04-08T07:39:15.511Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Adding 0 contexts to browser"}
+{"level":30,"time":"2024-04-08T07:39:15.519Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Start of node method newPage"}
+{"level":30,"time":"2024-04-08T07:39:15.519Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"currentBrowser: [object Object]"}
+{"level":30,"time":"2024-04-08T07:39:15.532Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Changed active context"}
+{"level":30,"time":"2024-04-08T07:39:15.663Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Video path: undefined"}
+{"level":30,"time":"2024-04-08T07:39:15.663Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Changed active page"}
+{"level":30,"time":"2024-04-08T07:39:17.629Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"End of node method newPage"}
+{"level":30,"time":"2024-04-08T07:39:17.635Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Start of node method click"}
+{"level":30,"time":"2024-04-08T07:39:17.635Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Strict mode is enabled, find Locator with id=login in page."}
+{"level":30,"time":"2024-04-08T07:39:17.733Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"End of node method click"}
+{"level":30,"time":"2024-04-08T07:39:17.739Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Start of node method typeText"}
+{"level":30,"time":"2024-04-08T07:39:17.739Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Strict mode is enabled, find Locator with [class=\"login__input username--input\"] in page."}
+{"level":30,"time":"2024-04-08T07:39:19.178Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"End of node method typeText"}
+{"level":30,"time":"2024-04-08T07:39:19.182Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Start of node method typeText"}
+{"level":30,"time":"2024-04-08T07:39:19.182Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Strict mode is enabled, find Locator with [class=\"login__input password--input\"] in page."}
+{"level":30,"time":"2024-04-08T07:39:20.059Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"End of node method typeText"}
+{"level":30,"time":"2024-04-08T07:39:20.063Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Start of node method click"}
+{"level":30,"time":"2024-04-08T07:39:20.063Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Strict mode is enabled, find Locator with [id=\"login_button\"] in page."}
+{"level":30,"time":"2024-04-08T07:39:22.122Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"End of node method click"}
+{"level":30,"time":"2024-04-08T07:40:44.757Z","pid":11632,"hostname":"LAPTOP-TVBC5V1G","msg":"Removed page=4b76f19a-9eb9-439e-8488-b903ad1c2596 from context=aef1d763-77f1-4b91-967e-1f7ce406a039 page stack"}
