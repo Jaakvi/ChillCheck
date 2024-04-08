@@ -21,8 +21,6 @@ CREATE TABLE StressHistory (
     user_id INT NOT NULL,
     entry_date DATE NOT NULL,
     stress VARCHAR(50),
-    weight DECIMAL(5,2),
-    sleep_hours INT,
     notes TEXT,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
@@ -41,11 +39,14 @@ CREATE TABLE Professionals (
 -- saa ehdottaa taulu nimiä ja mahdollisia muita nimiä taulun elementeille.
 -- muutoksia vielä tulossa
 CREATE TABLE ProfessionalHistory (
-    user_id INT NOT NULL,
-    name VARCHAR(100) NOT NULL,
+    user_id INT NOT NULL PRIMARY KEY,
+    pro_id INT NOT NULL,
+    Firstname TEXT(30) NOT NULL,
+    Lastnamne TEXT(30) NOT NULL,
     dosage VARCHAR(50),
     frequency VARCHAR(50),
     start_date DATE,
     end_date DATE,
-    FOREIGN KEY (user_id) REFERENCES Users(user_id)
+    FOREIGN KEY (user_id) REFERENCES Users(user_id),
+    FOREIGN KEY (pro_id) REFERENCES  Professionals(pro_id)
 );
