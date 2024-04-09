@@ -33,7 +33,7 @@ userRouter.route('/')
   .get(authenticateToken, getUsers)
     // update user
   .post(
-    body('username').trim().isLength({min: 3, max:20}).isAlphanumeric(),
+    body('username').trim().isLength({min: 3, max:30}).isAlphanumeric(),
     body('password').trim().isLength({min:8, max: 128}),
     body('email').trim().isEmail().normalizeEmail(),
     postUser);

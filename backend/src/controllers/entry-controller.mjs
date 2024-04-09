@@ -5,7 +5,7 @@ const getEntries = async (req, res) => {
   try{
     // return only logged in user's own entries
     const token_user_id = req.user.user_id;
-    const user_password = req.user.password
+    const user_password = req.user.password;
     const result = await listAllEntriesByUserId(token_user_id);
     if (!token_user_id){
         return res.status(401).json({message:"Unauthorized user"})

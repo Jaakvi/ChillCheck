@@ -8,6 +8,7 @@ import { getUserById, getUsers, postUser, putUser } from './controllers/user-con
 import { getItemById, getItems, postItem, putItem, deleteItem } from './controllers/item-controller.mjs';
 import userRouter from './router/user.router.mjs';
 import entryRouter from './router/entry-router.mjs';
+import kubiosRouter from './router/kubios-router.mjs';
 import cors from 'cors';
 import logger from './middlewares/logger.mjs';
 import authRouter from './router/auth-router.mjs';
@@ -28,6 +29,7 @@ app.use('/api/items',itemRouter)
 app.use('/api/users', userRouter)
 app.use('/api/entries', entryRouter)
 app.use('/api/auth', authRouter)
+app.use('/api/kubios', kubiosRouter);
 //default 404 note
 app.use(notFoundHandler)
 // Error handler for sending responses to all error cases
