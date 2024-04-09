@@ -1,0 +1,40 @@
+{
+  "name": "hyte-server",
+  "version": "1.0.0",
+  "description": "Rest api server",
+  "main": "test.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/test.js",
+    "apidoc": "apidoc -i src/ -o docs/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "hyteserver"
+  },
+  "author": "AuraSalomaa",
+  "license": "ISC",
+  "apidoc": {
+    "title": "Health Diary API documentation",
+    "url": "http://127.0.0.1/docs",
+    "order": [
+      "Entry"
+    ]
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "nodemon": "^3.0.3"
+  },
+  "dependencies": {
+    "apidoc": "^1.2.0",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.1",
+    "express": "^4.18.3",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "mysql2": "^3.9.1",
+    "validator": "^13.11.0"
+  }
+}
