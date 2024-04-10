@@ -4,3 +4,4 @@ node_modules
 .eslinctrc.js
 .env
 .healthuser.sql
+database_admin.sql

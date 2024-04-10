@@ -1,4 +1,5 @@
 import bcrypt from 'bcryptjs';
+import 'dotenv/config';
 import { validationResult } from 'express-validator';
 import {
   deleteUserById,
@@ -26,7 +27,7 @@ const getUserById = async (req, res) => {
 };
 
 const postUser = async (req, res, next) => {
-  const {username, password, email} = req.body;
+  const {username,Firstname, Lastname, password, email} = req.body;
   const validationError = validationResult(req)
   // check that all needed fields are included in request
   if (validationError.isEmpty()) {
@@ -34,6 +35,8 @@ const postUser = async (req, res, next) => {
     const hashedPassword = await bcrypt.hash(password, salt);
     const result = await insertUser({
       username,
+      Firstname,
+      Lastname,
       email,
       password: hashedPassword,
     },next);

@@ -30,7 +30,7 @@ const getUserData = async (req, res, next) => {
   const results = await response.json();
   return res.json(results);
 };
-
+// todo: Ongelmia kirjautumisessa kubiokseen.
 /**
 * Get user info from Kubios API example
 * TODO: Implement error handling

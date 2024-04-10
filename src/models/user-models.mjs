@@ -34,8 +34,8 @@ const selectUserById = async (id) => {
 const insertUser = async (user, next) => {
   try {
     const sql =
-      'INSERT INTO Users (username, password, email) VALUES (?, ?, ?)';
-    const params = [user.username, user.password, user.email];
+      'INSERT INTO Users (username,Firstname,Lastname,password,email) VALUES (?,?,?,?,?)';
+    const params = [user.username,user.Firstname,user.Lastname, user.password, user.email];
     const [result] = await promisePool.query(sql, params);
     // console.log(result);
     return {message: 'new user created', user_id: result.insertId};
