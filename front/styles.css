@@ -16,7 +16,19 @@ nav {
     width: 100%;
     height: 70px;
     background-color: rgb(196, 175, 175);
-    background-color: darksalmon;
+    background-color: rgb(233, 136, 103);
+}
+
+a {
+  color: white;
+  text-decoration: none;
+  font-size: medium;
+}
+
+a:hover {
+  color: orange;
+  text-decoration: none;
+  
 }
 
 #nappi {
@@ -26,12 +38,32 @@ nav {
 
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-    
-   
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;   
 } 
+
+#result {
+display: flex;
+flex-direction: column;
+margin-top: 10vh;
+margin-left: 10vh;
+}
+
 section {
- margin: 30px;
+  display: flex;
+  justify-content: center;
+  margin: 30px;
+}
+
+#instructions {
+  display: flex;
+  justify-content: left;
+  
+}
+
+li {
+  display: flex;
+  margin: 10px;
+  color: white;
 }
 
 p {
@@ -54,7 +86,12 @@ h2 {
   margin: 10px;
   font-size: 40px;
   color: white;
-  margin: 10px;
+}
+h3 {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 40px;
+  color: white;
 }
 
 p {
@@ -62,13 +99,33 @@ p {
   justify-content: center;
   margin: 10px;
 }
-
+/*NAPIT*/
 #login {
     color: white;
     width: 100px;
     background: rgb(219,165,56);
     background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat;
 }
+
+#logout {
+    color: white;
+    width: 100px;
+    background: rgb(219,165,56);
+    background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat;
+}
+
+#get_result {
+    color: white;
+    width: 100px;
+    height: 40px;
+    background: rgb(219,165,56);
+    background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 40px;
+}
+
 #homepage {
   color: white;
   width: 100px;
@@ -82,26 +139,39 @@ p {
   background: rgb(219,165,56);
   background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat; 
 }
+
 #history {
   color: white;
   width: 100px;
   background: rgb(219,165,56);
   background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat; 
 }
+
+/*KUVAT*/
+
 #picture {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
 
+}
+
+#historypage_picture {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  
 }
 #meditating {
-  width: 20vh;
+  width: 35vh;
 }
 
-#leftpicture {
+/*#leftpicture {
   display: flex;
   justify-content: left;
-}
+}*/
 
 #human_meditating {
-  width: 30vh;
+  width: 35vh;
 }
+
+
