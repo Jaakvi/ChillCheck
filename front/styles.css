@@ -1,7 +1,13 @@
 html {
-    background: rgb(219,165,56);
-    background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat;
-    object-fit: fill;
+  background: rgb(219, 165, 56);
+  background: linear-gradient(
+      225deg,
+      rgba(219, 165, 56, 1) 0%,
+      rgba(240, 126, 126, 1) 50%,
+      rgba(126, 111, 138, 1) 77%
+    )
+    no-repeat;
+  object-fit: fill;
 }
 
 * {
@@ -11,12 +17,23 @@ html {
 }
 
 nav {
-    display: flex;
+  /* display: flex;
     justify-content: space-between;
     width: 100%;
     height: 70px;
     background-color: rgb(196, 175, 175);
-    background-color: rgb(233, 136, 103);
+    background-color: rgb(233, 136, 103);*/
+  z-index: 999;
+  position: relative;
+  background-color: hsla(0, 0%, 10%, 0.315);
+  border: 2px solid hsl(0, 0%, 90%);
+  color: hsla(0, 0%, 100%, 0.897);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 70px;
+  display: flex;
+  /*padding: 2.5rem 2rem 3.5rem;
+  width: 26.25rem;*/
 }
 
 a {
@@ -28,24 +45,23 @@ a {
 a:hover {
   color: orange;
   text-decoration: none;
-  
 }
 
 #nappi {
-    display: flex;
-    align-items: right;
+  display: flex;
+  align-items: right;
 }
 
 body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;   
-} 
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
 
 #result {
-display: flex;
-flex-direction: column;
-margin-top: 10vh;
-margin-left: 10vh;
+  display: flex;
+  flex-direction: column;
+  margin-top: 10vh;
+  margin-left: 10vh;
 }
 
 section {
@@ -57,7 +73,6 @@ section {
 #instructions {
   display: flex;
   justify-content: left;
-  
 }
 
 li {
@@ -67,9 +82,9 @@ li {
 }
 
 p {
-    display: flex;
-    text-align: center;
-    color: white;
+  display: flex;
+  text-align: center;
+  color: white;
 }
 
 h1 {
@@ -101,50 +116,86 @@ p {
 }
 /*NAPIT*/
 #login {
-    color: white;
-    width: 100px;
-    background: rgb(219,165,56);
-    background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat;
+  color: white;
+  width: 100px;
+  background: rgb(219, 165, 56);
+  background: linear-gradient(
+      225deg,
+      rgba(219, 165, 56, 1) 0%,
+      rgba(240, 126, 126, 1) 50%,
+      rgba(126, 111, 138, 1) 77%
+    )
+    no-repeat;
 }
 
 #logout {
-    color: white;
-    width: 100px;
-    background: rgb(219,165,56);
-    background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat;
+  color: white;
+  width: 100px;
+  background: rgb(219, 165, 56);
+  background: linear-gradient(
+      225deg,
+      rgba(219, 165, 56, 1) 0%,
+      rgba(240, 126, 126, 1) 50%,
+      rgba(126, 111, 138, 1) 77%
+    )
+    no-repeat;
 }
 
 #get_result {
-    color: white;
-    width: 100px;
-    height: 40px;
-    background: rgb(219,165,56);
-    background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 40px;
+  color: white;
+  width: 100px;
+  height: 40px;
+  background: rgb(219, 165, 56);
+  background: linear-gradient(
+      225deg,
+      rgba(219, 165, 56, 1) 0%,
+      rgba(240, 126, 126, 1) 50%,
+      rgba(126, 111, 138, 1) 77%
+    )
+    no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40px;
 }
 
 #homepage {
   color: white;
   width: 100px;
-  background: rgb(219,165,56);
-  background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat; 
+  background: rgb(219, 165, 56);
+  background: linear-gradient(
+      225deg,
+      rgba(219, 165, 56, 1) 0%,
+      rgba(240, 126, 126, 1) 50%,
+      rgba(126, 111, 138, 1) 77%
+    )
+    no-repeat;
 }
 
 #profile {
   color: white;
   width: 100px;
-  background: rgb(219,165,56);
-  background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat; 
+  background: rgb(219, 165, 56);
+  background: linear-gradient(
+      225deg,
+      rgba(219, 165, 56, 1) 0%,
+      rgba(240, 126, 126, 1) 50%,
+      rgba(126, 111, 138, 1) 77%
+    )
+    no-repeat;
 }
 
 #history {
   color: white;
   width: 100px;
-  background: rgb(219,165,56);
-  background: linear-gradient(225deg, rgba(219,165,56,1) 0%, rgba(240,126,126,1) 50%, rgba(126,111,138,1) 77%) no-repeat; 
+  background: rgb(219, 165, 56);
+  background: linear-gradient(
+      225deg,
+      rgba(219, 165, 56, 1) 0%,
+      rgba(240, 126, 126, 1) 50%,
+      rgba(126, 111, 138, 1) 77%
+    )
+    no-repeat;
 }
 
 /*KUVAT*/
@@ -152,14 +203,12 @@ p {
 #picture {
   display: flex;
   justify-content: center;
-
 }
 
 #historypage_picture {
   display: flex;
   align-items: end;
   justify-content: center;
-  
 }
 #meditating {
   width: 35vh;
@@ -173,5 +222,3 @@ p {
 #human_meditating {
   width: 35vh;
 }
-
-
