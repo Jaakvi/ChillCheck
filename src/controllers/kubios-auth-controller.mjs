@@ -1,15 +1,4 @@
-/**
- * Authentication resource controller using Kubios API for login
-* @module controllers/auth-controller
-* @author mattpe <mattpe@metropolia.fi>
-* @requires jsonwebtoken
-* @requires bcryptjs
-* @requires dotenv
-* @requires models/user-model
-* @requires middlewares/error-handler
-* @exports postLogin
-* @exports getMe
-*/
+
 
 import 'dotenv/config'
 import jwt from 'jsonwebtoken';
@@ -25,13 +14,6 @@ import {
 // Kubios API base URL should be set in .env
 const baseUrl = process.env.KUBIOS_API_URI;
 
-/**
-* Creates a POST login request to Kubios API
-* @async
-* @param {string} username Username in Kubios
-* @param {string} password Password in Kubios
-* @return {string} idToken Kubios id token
-*/
 const kubiosLogin = async (username, password) => {
   const csrf = v4();
   const headers = new Headers();
