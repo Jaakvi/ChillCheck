@@ -116,6 +116,7 @@ p {
 }
 /*NAPIT*/
 #login {
+  margin-left:auto ;
   color: white;
   width: 100px;
   background: rgb(219, 165, 56);
@@ -129,6 +130,7 @@ p {
 }
 
 #logout {
+  margin-left: auto;
   color: white;
   width: 100px;
   background: rgb(219, 165, 56);
