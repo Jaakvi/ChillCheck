@@ -1,3 +1,14 @@
 node_modules
+<<<<<<< HEAD
 admin_user.sql
 .env
+=======
+.prettier.js
+.vscode
+.eslinctrc.js
+.env
+.healthuser.sql
+database_admin.sql
+.package-lock.json
+
+>>>>>>> 3f235184d05b58b99dafd777e63647c0ef6683fa
