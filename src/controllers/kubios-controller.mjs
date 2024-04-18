@@ -27,8 +27,14 @@ const getUserData = async (req, res, next) => {
       headers: headers,
     },
   );
-  const results = await response.json();
-  return res.json(results);
+  if (response.status === 200){
+    const results = await response.json();
+    console.log(results)
+    return res.json(results)
+  }
+  else {
+    return res.json({message:"failed to fetch data"})
+  };
 };
 // todo: Ongelmia kirjautumisessa kubiokseen.
 /**
