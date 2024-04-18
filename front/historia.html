@@ -20,11 +20,32 @@
       
     <div>
         <h3> Historia </h3>
+        <table class="styled-table">
+          <thead>
+            <tr>
+              <th>Entry Date</th>
+              <th>Mood</th>
+              <th>Sleep Hours</th>
+              <th>Notes</th>
+              <th>Delete</th>
+              <th>Entry ID</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+            <!-- tänne haetaan kaikki historiatiedot -->
+            <!-- # Get history -->
+            <!-- GET http://127.0.0.1:3000/api/users ????? mikä osote-->
+          </tbody>
+        </table>
+
+        <button class="get_users">Hae historiatiedot</button>
+      </div>
     </div>
       
     </main>
     <div id="historypage_picture">
       <img src="medor.jpg" alt="human" id="human_meditating" />
     </div>
+    <script type="module" src="./historia.js"></script>
   </body>
 </html>
