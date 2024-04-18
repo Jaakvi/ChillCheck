@@ -42,7 +42,8 @@ const kubiosLogin = async (username, password) => {
     throw customError('Login with Kubios failed', 500);
   }
   const location = response.headers.raw().location[0];
-  // console.log(location);
+
+  console.log(location);
   // If login fails, location contains 'login?null'
   if (location.includes('login?null')) {
     throw customError(
@@ -52,8 +53,9 @@ const kubiosLogin = async (username, password) => {
   }
   // If login success, Kubios response location header
   // contains id_token, access_token and expires_in
-  const regex = /id_token=(.*)&access_token=(.*)&expires_in=(.360)/;
+  const regex = /id_token=(.*)&access_token=(.*)&expires_in=(.*)/;
   const match = location.match(regex);
+  console.log(match)
   const idToken = match[1];
   return idToken;
 };
