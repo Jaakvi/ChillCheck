@@ -20,7 +20,9 @@ CREATE TABLE StressHistory (
     user_id INT NOT NULL,
     test_id INT AUTO_INCREMENT PRIMARY KEY,
     entry_date DATE NOT NULL,
-    stress_index VARCHAR(50),
+    stress_index DECIMAL,
+    highHR DECIMAL,
+    lowHR DECIMAL,
     notes TEXT,
     created_at DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
     FOREIGN KEY (user_id) REFERENCES Users(user_id)
