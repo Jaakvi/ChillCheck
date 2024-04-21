@@ -1,4 +1,4 @@
-<!DOCTYPE>
+<!DOCTYPE >
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,35 +9,55 @@
   <body>
     <header>
       <nav>
-        <button id="profile"> <a href="profiili.html"> Profiili </a> </button>
-        <button id="history"> <a href="historia.html"> Historia </a> </button>
-        <button id="homepage"><a href="kotisivu.html"> Kotisivu </a> </button>
+        <button id="profile"><a href="profiili.html"> Profiili </a></button>
+        <button id="history"><a href="historia.html"> Historia </a></button>
+        <button id="homepage"><a href="kotisivu.html"> Kotisivu </a></button>
         <button id="logout">Kirjaudu ulos</button>
       </nav>
-      
     </header>
     <main>
       <h1>ChillCheck</h1>
       <h2>Tervetuloa</h2>
 
-    <div id="result">
-      
-      <h3>Tee uusi mittaus</h3>
-      <section id="instructions">
-        <ul>
-          <li> 1. Avaa kubiosHRV sovellus ja kirjaudu sisään </li>
-          <li> 2. Pue sykesensori päällesi, jos käytössäsi on sykevyö voi se vaatia sykevyön takana olevan eri materiaalia olevan osan kastelua sykkeen löytämiseksi. </li>
-          <li> 3. Mene kubiosHRV sovelluksen home-välilehdelle ja paina "new readiness measurement"- näppäintä. </li>
-          <li> 4. Mene rauhalliseen paikkaan mittauksen ajaksi ja hengitä rauhallisesti hetki ennen mittausta. </li>
-          <li> 5. Ole rentona ja älä puhu mittauksen aikana. </li>
-          <li> 6. Paina start-näppäintä ja kubiosHRV sovellus alkaa mitata sykevälivaihteluasi. Mittaus kestää 2 minuuttia. </li>
-          <li> 7. Kun mittaus on valmis, voit painaa "hae tulokset"-nappia alapuolelta </li>
-        </ul>
-      </section>
-      <button id="get_result"> Hae tulokset </button>
+      <div id="result">
+        <h3>Tee uusi mittaus</h3>
+        <section id="instructions">
+          <ul>
+            <li>1. Avaa kubiosHRV sovellus ja kirjaudu sisään</li>
+            <li>
+              2. Pue sykesensori päällesi, jos käytössäsi on sykevyö voi se
+              vaatia sykevyön takana olevan eri materiaalia olevan osan kastelua
+              sykkeen löytämiseksi.
+            </li>
+            <li>
+              3. Mene kubiosHRV sovelluksen home-välilehdelle ja paina "new
+              readiness measurement"- näppäintä.
+            </li>
+            <li>
+              4. Mene rauhalliseen paikkaan mittauksen ajaksi ja hengitä
+              rauhallisesti hetki ennen mittausta.
+            </li>
+            <li>5. Ole rentona ja älä puhu mittauksen aikana.</li>
+            <li>
+              6. Paina start-näppäintä ja kubiosHRV sovellus alkaa mitata
+              sykevälivaihteluasi. Mittaus kestää 2 minuuttia.
+            </li>
+            <li>
+              7. Kun mittaus on valmis, voit painaa "hae tulokset"-nappia
+              alapuolelta
+            </li>
+          </ul>
+        </section>
+        <button id="get_result">Hae tulokset</button>
+      </div>
 
-    </div>
-     <!-- <section id="information">
+      <div id="loading-overlay"></div>
+
+      <div id="loading-dialog">
+        <p>Loading...</p>
+      </div>
+
+      <!-- <section id="information">
         <p>
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, in
           quia. Iste, possimus! Quaerat molestias dolores, officia in sit cumque
@@ -45,5 +65,6 @@
         </p>
       </section>-->
     </main>
+    <script type="module" src="./kotisivu.js"></script>
   </body>
 </html>
