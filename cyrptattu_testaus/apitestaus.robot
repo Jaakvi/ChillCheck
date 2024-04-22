@@ -3,12 +3,12 @@ Library    RequestsLibrary
 Library    Collections
 Library     Browser    auto_closing_level=SUITE
 Library     CryptoLibrary    variable_decryption=True
-Resource    restful_booker_keywords.resource
+Resource    apitestaus_keywords.resource
 Suite Setup    Authenticate as Admin
 
 *** Variables ***
-${username}    crypt:pIcv12T6btCUZ+VWz7pxlHLyDNkSs8zWhGErOaSSQkukg58vWJbtFQ+KsEpjiOmdqafA9V6e7+7teUjp+xpBk/8Tu+BsaisdQiVshwM=
-${password}    crypt:HiTIN2ydkeIFjKtTJYNzEHH+Q5+ybjwiyL8VatPWUVvxDgFVJc60/QSPrnOXI4Y9QGE8l/lHsbGNYSO1
+${username}    #crypt:pIcv12T6btCUZ+VWz7pxlHLyDNkSs8zWhGErOaSSQkukg58vWJbtFQ+KsEpjiOmdqafA9V6e7+7teUjp+xpBk/8Tu+BsaisdQiVshwM=
+${password}    #crypt:HiTIN2ydkeIFjKtTJYNzEHH+Q5+ybjwiyL8VatPWUVvxDgFVJc60/QSPrnOXI4Y9QGE8l/lHsbGNYSO1
 
 
 *** Test Cases ***
