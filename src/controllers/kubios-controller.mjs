@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import fetch from 'node-fetch';
-// import {customError} from '../middlewares/error-handler.mjs';
+import { errorHandler, notFoundHandler } from '../middlewares/error-handler.mjs';
+import {customError} from '../middlewares/error-handler.mjs';
 
 // Kubios API base URL should be set in .env
 const baseUrl = process.env.KUBIOS_API_URI;
@@ -36,15 +37,7 @@ const getUserData = async (req, res, next) => {
     return res.json({message:"failed to fetch data"})
   };
 };
-// todo: Ongelmia kirjautumisessa kubiokseen.
-/**
-* Get user info from Kubios API example
-* TODO: Implement error handling
-* @async
-* @param {Request} req Request object including Kubios id token
-* @param {Response} res
-* @param {NextFunction} next
-*/
+
 const getUserInfo = async (req, res, next) => {
   const {kubiosIdToken} = req.user;
   const headers = new Headers();
@@ -56,7 +49,14 @@ const getUserInfo = async (req, res, next) => {
     headers: headers,
   });
   const userInfo = await response.json();
-  return res.json(userInfo);
-};
+  if (response.status===200){
+      return res.json(userInfo);
+  }
+  else if (response.error){
+    return res.status().json({error: 400, message: 'bad request'});
+  }
+
+  };
+
 
 export {getUserData, getUserInfo};
