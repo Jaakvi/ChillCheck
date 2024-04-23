@@ -10,14 +10,23 @@ html {
 }
 
 nav {
-  display: flex;
+  /*display: flex;
   justify-content: space-between;
   width: 100%;
   height: 70px;
   background-color: rgb(196, 175, 175);
   background-color: darksalmon;
   background-color: rgb(233, 136, 103);
-  background-color: rgba(231, 141, 156, 0.237);
+  background-color: rgba(231, 141, 156, 0.237);*/
+  z-index: 999;
+  position: relative;
+  background-color: hsla(0, 0%, 10%, 0.167);
+  border: 2px solid hsl(0, 24%, 93%);
+  color: hsla(0, 0%, 100%, 0.897);
+  backdrop-filter: blur(10px);
+  width: 100%;
+  height: 70px;
+  display: flex;
 }
 a {
   color: white;
@@ -213,10 +222,21 @@ ion-icon {
   border-radius: 8px;
   margin: auto;
   background-color: rgb(138, 76, 67);
+  background: linear-gradient(
+      225deg,
+      rgba(219, 165, 56, 1) 0%,
+      rgba(240, 126, 126, 1) 50%,
+      rgba(126, 111, 138, 1) 77%
+    )
+    no-repeat;
+    border: 2px solid hsl(0, 0%, 90%);
+  
 }
 .dropdown_form {
   border-radius: 8px;
   background-color: #551b13;
+  background-color: hsla(0, 11%, 72%, 0.315);
+  border: 2px solid hsl(0, 0%, 90%);
   color: #ffffff;
   padding: 10px;
   margin-top: 25px;

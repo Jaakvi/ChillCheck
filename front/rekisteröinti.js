@@ -11,10 +11,10 @@ document.addEventListener("DOMContentLoaded", function () {
   createUser.addEventListener("click", async (evt) => {
     evt.preventDefault();
     console.log("Nyt luodaan käyttäjä");
-    const url = "";
+    const url = "http://127.0.0.1:3000/api/users";
 
     // # Create user
-    // POST http://127.0.0.1:3000/api/users
+    // POST 
     // content-type: application/json
 
     const form = document.querySelector(".login__form");
@@ -25,10 +25,13 @@ document.addEventListener("DOMContentLoaded", function () {
       return; // Exit function if form is not valid
     }
 
-    const username = form.querySelector("input[name=username]").value;
+
 
     const body = {
-      username: username,
+      
+      username: form.querySelector("input[name=username]").value,
+      Firstname:form.querySelector("input[name=firstname]").value,
+      Lastname:form.querySelector("input[name=lastname]").value,
       password: form.querySelector("input[name=password]").value,
       email: form.querySelector("input[name=email]").value,
     };

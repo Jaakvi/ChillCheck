@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //   "password": "secret"
     //  }
 
-    const url = "";
+    const url = `http://localhost:3000/api/auth/login`;
 
     const form = document.querySelector(".login__form");
 

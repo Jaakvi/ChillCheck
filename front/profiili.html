@@ -3,38 +3,174 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kotisivu</title>
+    <title>Profiili</title>
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <header>
       <nav>
-        <button id="profile">Profiili</button>
-        <button id="history">Historia</button>
-        <button id="homepage">Kotisivu</button>
+        <button id="profile"><a href="profiili.html"> Profiili </a> </button>
+        <button id="history"> <a href="historia.html"> Historia </a> </button>
+        <button id="homepage"> <a href="kotisivu.html"> Kotisivu </a> </button>
         <button id="login">Kirjaudu ulos</button>
       </nav>
       
     </header>
     <main>
       <h1>ChillCheck</h1>
-      <h2>Tervetuloa</h2>
+      <h3> Profiili </h3>
+      
+      <div class="login_form_wrapper">
+      <form action="#" class="login__form" id="register_form">
 
-      <section id="about">
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum itaque
-          deleniti reiciendis iusto qui nihil voluptatem at impedit illo
-          voluptates eaque iure unde magni quia, quisquam quaerat.
-        </p>
-      </section>
+        <div class="login_form_content">
+          <div class="login_content_box">
+            <ion-icon name="person-outline"></ion-icon>
+            <div class="login_content_box--input">
+              <input
+                type="text"
+                id="dialogSelection"
+                placeholder=" "
+                class="login__input dialog--input"
+                readonly
+              />
+              <!-- <label for="dialogSelection" class="login__label"
+                >Status</label
+              > -->
+            </div>
+          </div>
 
-      <section id="information">
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, in
-          quia. Iste, possimus! Quaerat molestias dolores, officia in sit cumque
-          id explicabo vel sapiente illo nemo dolor pariatur culpa voluptatem?
-        </p>
-      </section>
+          <!--REGISTER CONTENT BOX 4-->
+          <div class="login_content_box">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+
+            <div class="login_content_box--input">
+              <input
+                type="text"
+                name="firstname"
+                placeholder=" "
+                class="login__input firstname--input"
+                required
+              />
+              <label for="p" class="login__label">Etunimi</label>
+            </div>
+          </div>
+
+          <!--REGISTER CONTENT BOX 7-->
+          <div class="login_content_box">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+
+            <div class="login_content_box--input">
+              <input
+                type="text"
+                name="lastname"
+                placeholder=" "
+                class="login__input lastname--input"
+                required
+              />
+              <label for="p" class="login__label">Sukunimi</label>
+            </div>
+          </div>
+
+          <!-- REGISTER-CONTENT-BOX-1 -->
+          <div class="login_content_box">
+            <ion-icon name="person-outline"></ion-icon>
+
+            <div class="login_content_box--input">
+              <input
+                type="text"
+                name="username"
+                placeholder=" "
+                minlength="3"
+                maxlength="20"
+                class="login__input username--input"
+                required
+              />
+              <label for="username" class="login__label"
+                >Käyttäjätunnus</label
+              >
+            </div>
+          </div>
+          <!-- REGISTER-CONTENT-BOX-2 -->
+          <div class="login_content_box">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+
+            <div class="login_content_box--input">
+              <input
+                type="password"
+                name="password"
+                placeholder=" "
+                minlength="8"
+                maxlength="128"
+                class="login__input password--input"
+                required
+              />
+              <label for="password" class="login__label">Salasana</label>
+              <ion-icon
+                class="password__hidden"
+                id="password_hidden"
+                name="eye-off-outline"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <!-- REGISTER-CONTENT-BOX-5 -->
+          <div class="login_content_box">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+
+            <div class="login_content_box--input">
+              <input
+                type="password"
+                name="password"
+                placeholder=" "
+                minlength="8"
+                maxlength="128"
+                class="login__input password--input"
+                required
+              />
+              <label for="password" class="login__label"
+                >Vahvista salasana</label
+              >
+              <ion-icon
+                class="password__hidden"
+                id="password_hidden"
+                name="eye-off-outline"
+              ></ion-icon>
+            </div>
+          </div>
+
+          <!-- REGISTER-CONTENT-BOX-3 -->
+
+          <div class="login_content_box">
+            <ion-icon name="lock-closed-outline"></ion-icon>
+
+            <div class="login_content_box--input">
+              <input
+                type="email"
+                name="email"
+                placeholder=" "
+                pattern=".+@example\.fi"
+                class="login__input email--input"
+                required
+              />
+              <label for="p" class="login__label">Sähköposti</label>
+            </div>
+          </div>
+
+          <!-- LOGIN BUTTON -->
+          <button class="button__login" id="register_button">
+            Rekisteröidy
+          </button>
+
+          <!-- REGISTER LOGIN -->
+          <p class="register__login text--sm">
+            Oletko jo rekisteröitynyt
+            <a href="kirjautuminen.html">kirjaudu sisään</a>
+          </p>
+        </div>
+      </form>
+    </div>
+
     </main>
   </body>
 </html>
