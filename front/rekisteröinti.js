@@ -1,3 +1,5 @@
+import { fetchData } from "./fetch";
+
 document.addEventListener("DOMContentLoaded", function () {
     
     const savedOption = localStorage.getItem("selectedOption");
@@ -44,10 +46,11 @@ document.addEventListener("DOMContentLoaded", function () {
       body: JSON.stringify(body), // body data type must match "Content-Type" header
     };
 
-    fetchData(url, options).then((data) => {
+    fetchData (url, options).then((data) => {
       // käsitellään fetchData funktiosta tullut JSON
       console.log(data);
       alert("Rekistöröinti onnistui");
+      location.href = "kirjautuminen.html"
     });
   });
 });

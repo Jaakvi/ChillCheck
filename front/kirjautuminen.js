@@ -1,3 +1,5 @@
+import { fetchData } from "./fetch";
+
 document.addEventListener("DOMContentLoaded", function () {
   // JavaScript code
   // Open register dialog when "Rekisteröidy tästä" is clicked
@@ -22,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
     //   "password": "secret"
     //  }
 
-    const url = `http://localhost:3000/api/auth/login`;
+    const url = `http://127.0.0.1:3000/api/auth/login`;
 
     const form = document.querySelector(".login__form");
 
