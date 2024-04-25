@@ -106,6 +106,7 @@ h3 {
   display: flex;
   justify-content: flex-start;
   margin-left: 40px;
+  margin-bottom: 20px;
   color: white;
 }
 
@@ -147,14 +148,16 @@ p {
   color: white;
   width: 100px;
   height: 40px;
-  background: rgb(219, 165, 56);
+  /*background: rgb(219, 165, 56);
   background: linear-gradient(
       225deg,
       rgba(219, 165, 56, 1) 0%,
       rgba(240, 126, 126, 1) 50%,
       rgba(126, 111, 138, 1) 77%
     )
-    no-repeat;
+    no-repeat;*/
+  background-color: rgb(131, 109, 152);
+  border: 2px solid floralwhite;
   display: flex;
   justify-content: center;
   align-items: center;
