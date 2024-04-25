@@ -1,15 +1,4 @@
-/**
- * Authentication resource controller using Kubios API for login
-* @module controllers/auth-controller
-* @author mattpe <mattpe@metropolia.fi>
-* @requires jsonwebtoken
-* @requires bcryptjs
-* @requires dotenv
-* @requires models/user-model
-* @requires middlewares/error-handler
-* @exports postLogin
-* @exports getMe
-*/
+
 
 import 'dotenv/config'
 import jwt from 'jsonwebtoken';
@@ -25,13 +14,6 @@ import {
 // Kubios API base URL should be set in .env
 const baseUrl = process.env.KUBIOS_API_URI;
 
-/**
-* Creates a POST login request to Kubios API
-* @async
-* @param {string} username Username in Kubios
-* @param {string} password Password in Kubios
-* @return {string} idToken Kubios id token
-*/
 const kubiosLogin = async (username, password) => {
   const csrf = v4();
   const headers = new Headers();
@@ -60,7 +42,8 @@ const kubiosLogin = async (username, password) => {
     throw customError('Login with Kubios failed', 500);
   }
   const location = response.headers.raw().location[0];
-  // console.log(location);
+
+  console.log(location);
   // If login fails, location contains 'login?null'
   if (location.includes('login?null')) {
     throw customError(
@@ -70,8 +53,9 @@ const kubiosLogin = async (username, password) => {
   }
   // If login success, Kubios response location header
   // contains id_token, access_token and expires_in
-  const regex = /id_token=(.*)&access_token=(.*)&expires_in=(.360)/;
+  const regex = /id_token=(.*)&access_token=(.*)&expires_in=(.*)/;
   const match = location.match(regex);
+  console.log(match)
   const idToken = match[1];
   return idToken;
 };
