@@ -17,9 +17,7 @@ async function getEntries() {
   };
   fetchData(url, options).then((data) => {
     // käsitellään fetchData funktiosta tullut JSON
-    console.log(data.results[0].daily_result);
-    console.log(data.results[0].result.artefact_level);
-    console.log(data.results[0].result.stress_index);
+    console.log(data.results);
     createTable(data);
     // document.getElementById("name").innerHTML = data.user.username;
   });
@@ -30,7 +28,7 @@ function createTable(data) {
   tbody.innerHTML = "";
 
   data.results.forEach((rivi) => {
-    console.log(rivi.daily_result);
+    // console.log(rivi.daily_result);
     const tr = document.createElement("tr");
 
     const td1 = document.createElement("td");
@@ -45,7 +43,7 @@ function createTable(data) {
     td3.innerText = rivi.result.stress_index;
     tr.appendChild(td3);
 
-    //   const td4 = document.createElement("td");
+      const td4 = document.createElement("td");
 
     //   const noteButton = document.createElement("button");
     //   noteButton.className = "check";
@@ -57,7 +55,7 @@ function createTable(data) {
     //   });
 
     //   td4.appendChild(noteButton);
-    //   tr.appendChild(td4);
+       tr.appendChild(td4);
 
     //   const td5 = document.createElement("td");
     //   const deleteButton = document.createElement("button");
@@ -75,4 +73,13 @@ function createTable(data) {
 
     tbody.appendChild(tr);
   });
+}
+// logout nappula 
+document.getElementById("logout").addEventListener("click", logOut);
+
+function logOut(evt) {
+  evt.preventDefault();
+  localStorage.removeItem("token");
+  console.log("Kirjaudutaan ulos");
+  window.location.href = "kirjautuminen.html";
 }

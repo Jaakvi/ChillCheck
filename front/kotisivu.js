@@ -71,3 +71,9 @@ document.addEventListener("DOMContentLoaded", () => {
     fetchData();
   });
 });
+function logOut(evt) {
+  evt.preventDefault();
+  localStorage.removeItem("token");
+  console.log("Kirjaudutaan ulos");
+  window.location.href = "kirjautuminen.html";
+}
