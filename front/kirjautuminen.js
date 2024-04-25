@@ -1,73 +1,76 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const getResultButton = document.getElementById("get_result");
-  const loadingOverlay = document.getElementById("loading-overlay");
-  const loadingDialog = document.getElementById("loading-dialog");
+import { fetchData } from "./fetch";
 
-  // Function to reset the console
-  function resetConsole() {
-    console.clear(); // Clear console
-  }
+document.addEventListener("DOMContentLoaded", function () {
+  // JavaScript code
+  // Open register dialog when "Rekisteröidy tästä" is clicked
+  document
+    .querySelector(".register__login a")
+    .addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent default link behavior
+      document.getElementById("register_dialog").showModal(); // Show register dialog
+    });
+  const loginUser = document.querySelector(".button__login");
 
-  // Function to clear the loading dialog
-  function clearLoadingDialog() {
-    loadingDialog.innerHTML = ""; // Clear loading dialog content
-  }
+  loginUser.addEventListener("click", async (evt) => {
+    evt.preventDefault();
+    console.log("Nyt logataan sisään");
 
-  // Function to fetch JSON data
-  async function fetchData() {
-    // Show dark overlay
-    const url = `http://127.0.0.1:3000/api/kubios/user-data`;
-    const token = localStorage.getItem("token");
+    // # Login
+    // POST http://localhost:3000/api/auth/login
+    // content-type: application/json
 
-    loadingOverlay.style.display = "block";
-    loadingDialog.style.display = "block";
+    // {
+    //   "username": "user",
+    //   "password": "secret"
+    //  }
 
-    // Reset console
-    resetConsole();
+    const url = `http://127.0.0.1:3000/api/auth/login`;
 
-    const options = {
-      method: "GET", // *GET, POST, PUT, DELETE, etc.
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: "Bearer " + token, // Removed the colon after Bearer
-      }, // body data type must match "Content-Type" header
+    const form = document.querySelector(".login__form");
+
+    const body = {
+      username: form.querySelector("input[name=username]").value,
+      password: form.querySelector("input[name=password]").value,
     };
 
-    // Simulate loading for 5 seconds
-    setTimeout(() => {
-      fetch(url, options)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          // Hide loading screen
-          loadingOverlay.style.display = "none";
-          loadingDialog.style.display = "none";
+    const options = {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(body), // body data type must match "Content-Type" header
+    };
 
-          // Display the JSON data in console
-          console.log(data);
-        })
-        .catch((error) => {
-          console.error(`Error fetching data: ${error}`);
-          clearLoadingDialog(); // Clear loading dialog
-          console.clear(); // Clear console
-          loadingDialog.innerHTML = `<p>Error fetching data: ${error}</p>`;
-
-          // Hide loading screen after 5 seconds
-          setTimeout(() => {
-            loadingOverlay.style.display = "none";
-            loadingDialog.style.display = "none";
-          }, 2000);
-        });
-    }, 2000); // Simulate loading for 5 seconds
-  }
-
-  // Event listener for Get Result button
-  getResultButton.addEventListener("click", () => {
-    // Call the function to fetch and show data
-    fetchData();
+    fetchData(url, options).then((data) => {
+      // käsitellään fetchData funktiosta tullut JSON
+      console.log(data);
+      console.log(data.token);
+      localStorage.setItem("token", data.token);
+      // kannattaa fetch.js palauttaa BE puolen validointi virheen joka käsitellään
+      if (data.token === undefined) {
+        alert("Unauth user: Käyttäjänimi tai salasana ei oikein");
+      } else {
+        alert("Kirjautuminen onnistui.");
+        window.location.href = "kotisivu.html";
+      }
+      logResponse(
+        "loginResponse",
+        `localStorage set with token value: ${data.token}`
+      );
+    });
   });
+  // Handle form submission in the register dialog
+  document
+    .querySelector("#register_dialog form")
+    .addEventListener("submit", function (event) {
+      event.preventDefault(); // Prevent default form submission behavior
+      const selectValue = document.getElementById("professional").value; // Get selected value from dropdown
+      if (selectValue === "Ammattilainen" || selectValue === "Opiskelija") {
+        // If a valid option is selected, redirect to the register page
+        localStorage.setItem("selectedOption", selectValue);
+        window.location.href = "rekisteröinti.html";
+      } else {
+        alert("Valitse vaihtoehto!"); // Alert user to select an option if none is selected
+      }
+    });
 });
