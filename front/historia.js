@@ -1,82 +1,76 @@
-import { fetchData } from "./fetch.js";
+document.addEventListener("DOMContentLoaded", () => {
+  const getResultButton = document.getElementById("get_result");
+  const loadingOverlay = document.getElementById("loading-overlay");
+  const loadingDialog = document.getElementById("loading-dialog");
 
-const allButton = document.querySelector(".get_users");
-allButton.addEventListener("click", getEntries);
+  // Function to reset the console
+  function resetConsole() {
+    console.clear(); // Clear console
+  }
 
-async function getEntries() {
-  console.log("Haetaan kaikki entriet");
+  // Function to clear the loading dialog
+  function clearLoadingDialog() {
+    loadingDialog.innerHTML = ""; // Clear loading dialog content
+  }
 
-  const url = "http://127.0.0.1:3000/api/kubios/user-data";
-  let tokeni = localStorage.getItem("token");
+  // Function to fetch JSON data
+  async function fetchData() {
+    // Show dark overlay
+    const url = `http://127.0.0.1:3000/api/kubios/user-data`;
+    const token = localStorage.getItem("token");
 
-  const options = {
-    method: "GET", // *GET, POST, PUT, DELETE, etc.
-    headers: {
-      Authorization: "Bearer: " + tokeni,
-    },
-  };
-  fetchData(url, options).then((data) => {
-    // käsitellään fetchData funktiosta tullut JSON
-    console.log(data.results);
-    createTable(data);
-    // document.getElementById("name").innerHTML = data.user.username;
+    loadingOverlay.style.display = "block";
+    loadingDialog.style.display = "block";
+
+    // Reset console
+    resetConsole();
+
+    const options = {
+      method: "GET", // *GET, POST, PUT, DELETE, etc.
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: "Bearer " + token, // Removed the colon after Bearer
+      }, // body data type must match "Content-Type" header
+    };
+
+    // Simulate loading for 5 seconds
+    setTimeout(() => {
+      fetch(url, options)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Network response was not ok");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Hide loading screen
+          loadingOverlay.style.display = "none";
+          loadingDialog.style.display = "none";
+
+          // Display the JSON data in console
+          console.log(data.results.slice(-3));
+        })
+        .catch((error) => {
+          console.error(`Error fetching data: ${error}`);
+          clearLoadingDialog(); // Clear loading dialog
+          console.clear(); // Clear console
+          loadingDialog.innerHTML = `<p>Error fetching data: ${error}</p>`;
+
+          // Hide loading screen after 5 seconds
+          setTimeout(() => {
+            loadingOverlay.style.display = "none";
+            loadingDialog.style.display = "none";
+          }, 2000);
+        });
+    }, 2000); // Simulate loading for 5 seconds
+  }
+
+  // Event listener for Get Result button
+  getResultButton.addEventListener("click", () => {
+    // Call the function to fetch and show data
+    fetchData();
   });
-}
-
-function createTable(data) {
-  const tbody = document.querySelector(".tbody");
-  tbody.innerHTML = "";
-
-  data.results.forEach((rivi) => {
-    // console.log(rivi.daily_result);
-    const tr = document.createElement("tr");
-
-    const td1 = document.createElement("td");
-    td1.innerText = rivi.daily_result;
-    tr.appendChild(td1);
-
-    const td2 = document.createElement("td");
-    td2.innerText = rivi.result.artefact_level;
-    tr.appendChild(td2);
-
-    const td3 = document.createElement("td");
-    td3.innerText = rivi.result.stress_index;
-    tr.appendChild(td3);
-
-      const td4 = document.createElement("td");
-
-    //   const noteButton = document.createElement("button");
-    //   noteButton.className = "check";
-    //   noteButton.innerText = "Notes";
-
-    //   noteButton.addEventListener("click", function () {
-    //     const notes = rivi.notes;
-    //     openDialog(notes);
-    //   });
-
-    //   td4.appendChild(noteButton);
-       tr.appendChild(td4);
-
-    //   const td5 = document.createElement("td");
-    //   const deleteButton = document.createElement("button");
-    //   deleteButton.className = "del";
-    //   deleteButton.dataset.id = rivi.entry_id;
-    //   deleteButton.textContent = "Delete";
-    //   td5.appendChild(deleteButton);
-    //   deleteButton.addEventListener("click", deleteUser);
-
-    // const td6 = document.createElement("td");
-    // td6.innerText = rivi.;
-
-    // tr.appendChild(td5);
-    // tr.appendChild(td6);
-
-    tbody.appendChild(tr);
-  });
-}
-// logout nappula 
-document.getElementById("logout").addEventListener("click", logOut);
-
+});
 function logOut(evt) {
   evt.preventDefault();
   localStorage.removeItem("token");
