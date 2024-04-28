@@ -48,7 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
           loadingDialog.style.display = "none";
 
           // Display the JSON data in console
-          console.log(data);
+          console.log(data.results.slice(-3));
         })
         .catch((error) => {
           console.error(`Error fetching data: ${error}`);
