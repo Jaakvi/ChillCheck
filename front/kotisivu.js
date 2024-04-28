@@ -1,3 +1,5 @@
+import Chart from "chart.js/auto";
+
 document.addEventListener("DOMContentLoaded", () => {
   const getResultButton = document.getElementById("get_result");
   const loadingOverlay = document.getElementById("loading-overlay");
@@ -48,7 +50,62 @@ document.addEventListener("DOMContentLoaded", () => {
           loadingDialog.style.display = "none";
 
           // Display the JSON data in console
-          console.log(data.results.slice(-3));
+          data.results.slice(-3).forEach((rivi) => {
+            const result = rivi.result;
+
+            const chartData = {
+              labels: ["Stress Index"],
+              datasets: [
+                {
+                  label: "Values",
+                  data: [result.stress_index],
+                  backgroundColor: [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(255, 206, 86, 0.2)",
+                  ],
+                  borderColor: [
+                    "rgba(255, 99, 132, 1)",
+                    "rgba(54, 162, 235, 1)",
+                    "rgba(255, 206, 86, 1)",
+                  ],
+                  borderWidth: 1,
+                },
+              ],
+            };
+            console.log(chartData);
+
+            const config = {
+              type: "bar",
+              data: chartData,
+              options: {
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                  },
+                  x: {
+                    display: true,
+                  },
+                },
+                plugins: {
+                  legend: {
+                    display: true,
+                  },
+                  title: {
+                    display: true,
+                    text: "Kubios",
+                  },
+                },
+                interaction: {
+                  mode: "index",
+                },
+              },
+            };
+            const myChart = new Chart(
+              document.getElementById("myChart"),
+              config
+            );
+          });
         })
         .catch((error) => {
           console.error(`Error fetching data: ${error}`);
