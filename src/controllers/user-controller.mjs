@@ -57,7 +57,7 @@ const postUser = async (req, res, next) => {
 const putUser = async (req, res) => {
   // Get userinfo from req.user object extracted from token
   const user_id = req.user.user_id;
-  const {username, password, email} = req.body;
+  const {username,Firstname,Lastname, password, email} = req.body;
   // hash password if included in request
   const salt = await bcrypt.genSalt(10);
   const hashedPassword = await bcrypt.hash(password, salt);
@@ -66,6 +66,8 @@ const putUser = async (req, res) => {
     const result = await updateUserById({
       user_id,
       username,
+      Firstname,
+      Lastname,
       password: hashedPassword,
       email,
     });

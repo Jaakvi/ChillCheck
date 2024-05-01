@@ -9,6 +9,9 @@ admin_user.sql
 .env
 .healthuser.sql
 database_admin.sql
+<<<<<<< HEAD
 .package-lock.json
 
 >>>>>>> 3f235184d05b58b99dafd777e63647c0ef6683fa
+=======
+>>>>>>> 51ccadd68c557434795fc9be5c961e1ae0474a05
