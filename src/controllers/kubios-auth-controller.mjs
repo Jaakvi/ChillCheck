@@ -128,11 +128,10 @@ const postLogin = async (req, res, next) => {
     const kubiosUser = await kubiosUserInfo(kubiosIdToken);
     // Check if kubios user email already exists in DB,
     // if it does, get the user_id, if not, create a new user and get the id
-    const localUserId = await syncWithLocalUser(kubiosUser);
     // Include kubiosIdToken in the auth token used in this app
     // NOTE: What is the expiration time of the Kubios token?
     const token = jwt.sign(
-      {userId: localUserId, kubiosIdToken},
+      {kubiosIdToken},
       process.env.JWT_SECRET,
       {
         expiresIn: process.env.JWT_EXPIRES_IN,
@@ -141,7 +140,6 @@ const postLogin = async (req, res, next) => {
     return res.json({
       message: 'Logged in successfully with Kubios',
       user: kubiosUser,
-      user_id: localUserId,
       token,
     });
   } catch (err) {
