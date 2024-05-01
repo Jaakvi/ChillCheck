@@ -1,0 +1,52 @@
+<!DOCTYPE html >
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Historia</title>
+    <script type="module" crossorigin src="/dist/assets/history-lKsSvHz6.js"></script>
+    <link rel="modulepreload" crossorigin href="/dist/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="/dist/assets/fetch-CGUiTqyx.js">
+    <link rel="stylesheet" crossorigin href="/dist/assets/styles-B9KX3G_P.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button id="profile"> <a href="profiili.html"> Profiili </a> </button>
+        <button id="history"> <a href="historia.html"> Historia </a> </button>
+        <button id="homepage"> <a href="kotisivu.html"> Kotisivu </a> </button>
+        <button id="logout"> <a href="kirjautuminen.html"> Kirjaudu ulos </a> </button>
+      </nav>
+    </header>
+    <main>
+      <h1>ChillCheck</h1>
+      
+    <div>
+        <h3> Historia </h3>
+        <table class="styled-table">
+          <thead>
+            <!-- Käytetään Timestamp, (freq domain LF power_nu, LF power prc, RESULTS Stress_index) -->
+            <tr>
+              <th>Date</th>
+              <th>Mood</th>
+              <th>Stress index</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody class="tbody">
+            <!-- tänne haetaan kaikki historiatiedot -->
+            <!-- # Get history -->
+            <!-- GET http://127.0.0.1:3000/api/user?? ????? mikä osote-->
+          </tbody>
+        </table>
+
+        <button class="get_users">Hae historiatiedot</button>
+      </div>
+    </div>
+      
+    </main>
+    <div id="historypage_picture">
+      <img src="/dist/assets/medor-BNSGgY3Z.jpg" alt="human" id="human_meditating" />
+    </div>
+  </body>
+</html>
