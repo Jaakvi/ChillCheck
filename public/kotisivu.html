@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -76,3 +77,85 @@
     </main>
   </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kotisivu</title>
+
+    <script type="module" crossorigin src="/public/assets/home-C1CyVfad.js"></script>
+    <link rel="modulepreload" crossorigin href="/public/assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="stylesheet" crossorigin href="/public/assets/styles-B9KX3G_P.css">
+  </head>
+  <body>
+    <header>
+      <nav>
+        <button id="profile"><a href="profiili.html"> Profiili </a></button>
+        <button id="history"><a href="historia.html"> Historia </a></button>
+        <button id="homepage"><a href="kotisivu.html"> Kotisivu </a></button>
+        <button id="logout">
+          <a href="kirjautuminen.html"> Kirjaudu ulos </a>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <h1>ChillCheck</h1>
+      <h2>Tervetuloa</h2>
+
+      <div id="result">
+        <h3>Tee uusi mittaus</h3>
+        <section id="instructions">
+          <ul>
+            <li>1. Avaa kubiosHRV sovellus ja kirjaudu sisään</li>
+            <li>
+              2. Pue sykesensori päällesi, jos käytössäsi on sykevyö voi se
+              vaatia sykevyön takana olevan eri materiaalia olevan osan kastelua
+              sykkeen löytämiseksi.
+            </li>
+            <li>
+              3. Mene kubiosHRV sovelluksen home-välilehdelle ja paina "new
+              readiness measurement"- näppäintä.
+            </li>
+            <li>
+              4. Mene rauhalliseen paikkaan mittauksen ajaksi ja hengitä
+              rauhallisesti hetki ennen mittausta.
+            </li>
+            <li>5. Ole rentona ja älä puhu mittauksen aikana.</li>
+            <li>
+              6. Paina start-näppäintä ja kubiosHRV sovellus alkaa mitata
+              sykevälivaihteluasi. Mittaus kestää 2 minuuttia.
+            </li>
+            <li>
+              7. Kun mittaus on valmis, voit painaa "hae tulokset"-nappia
+              alapuolelta joka hakee kolme viimeisintä testitulosta
+            </li>
+          </ul>
+        </section>
+        <button id="get_result">Hae tulokset</button>
+      </div>
+
+      <div id="loading-overlay"></div>
+
+      <div id="loading-dialog">
+        <p>Loading...</p>
+      </div>
+
+      <div id="chart-container">
+        <canvas id="myChart"></canvas>
+      </div>
+      </div>
+
+      <!-- <section id="information">
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, in
+          quia. Iste, possimus! Quaerat molestias dolores, officia in sit cumque
+          id explicabo vel sapiente illo nemo dolor pariatur culpa voluptatem?
+        </p>
+      </section>-->
+    </main>
+
+  </body>
+</html>
+>>>>>>> 36d5f981b1c75a10cf78df003bde7c8a1a2cc562
