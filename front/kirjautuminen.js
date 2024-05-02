@@ -1,14 +1,14 @@
-import { fetchData } from "./fetch";
+import { fetchData } from "./fetch.js";
 
 document.addEventListener("DOMContentLoaded", function () {
   // JavaScript code
   // Open register dialog when "Rekisteröidy tästä" is clicked
-  document
-    .querySelector(".register__login a")
-    .addEventListener("click", function (event) {
-      event.preventDefault(); // Prevent default link behavior
-      document.getElementById("register_dialog").showModal(); // Show register dialog
-    });
+  // document
+  //   .querySelector(".register__login a")
+  //   .addEventListener("click", function (event) {
+  //     event.preventDefault(); // Prevent default link behavior
+  //     document.getElementById("register_dialog").showModal(); // Show register dialog
+  //   });
   const loginUser = document.querySelector(".button__login");
 
   loginUser.addEventListener("click", async (evt) => {
