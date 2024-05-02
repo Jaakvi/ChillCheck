@@ -71,11 +71,11 @@ if (canvas) {
       borderWidth: 1,
     })),
   };
-  
-  
-  
 
-  
+
+
+
+
 
   const config = {
     type: "bar",
@@ -119,9 +119,9 @@ if (canvas) {
       },
     },
   };
-  
-  
-  
+
+
+
   new Chart(ctx, config);
 } else {
   console.error("Canvas element not found.");
@@ -144,7 +144,7 @@ if (canvas) {
 
   // Event listener for Get Result button
   getResultButton.addEventListener("click", () => {
-    
+
      // Näytä chart-container nappulaa painaessa
      chartContainer.style.display = 'block';
     fetchData();
