@@ -4,7 +4,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const getResultButton = document.getElementById("get_result");
   const loadingOverlay = document.getElementById("loading-overlay");
   const loadingDialog = document.getElementById("loading-dialog");
+  const chartContainer = document.getElementById("chart-container");
 
+  // Piilota chart-container
+  chartContainer.style.display = 'none';
   // Function to reset the console
   function resetConsole() {
     console.clear(); // Clear console
@@ -31,13 +34,8 @@ document.addEventListener("DOMContentLoaded", () => {
       method: "GET", // *GET, POST, PUT, DELETE, etc.
       headers: {
         "Content-Type": "application/json",
-<<<<<<< Updated upstream
-        Authorization: "Bearer " + token, // Removed the colon after Bearer
-      }, // body data type must match "Content-Type" header
-=======
         Authorization: "Bearer " + token,
       },
->>>>>>> Stashed changes
     };
 
     // Simulate loading for 5 seconds
@@ -54,73 +52,6 @@ document.addEventListener("DOMContentLoaded", () => {
           loadingOverlay.style.display = "none";
           loadingDialog.style.display = "none";
 
-<<<<<<< Updated upstream
-          // Display the JSON data in console
-          data.results.slice(-3).forEach((rivi) => {
-            const result = rivi.result;
-
-            const chartData = {
-              labels: ["Stress Index"],
-              datasets: [
-                {
-                  label: "Values",
-                  data: [result.stress_index],
-                  backgroundColor: [
-                    "rgba(255, 99, 132, 0.2)",
-                    "rgba(54, 162, 235, 0.2)",
-                    "rgba(255, 206, 86, 0.2)",
-                  ],
-                  borderColor: [
-                    "rgba(255, 99, 132, 1)",
-                    "rgba(54, 162, 235, 1)",
-                    "rgba(255, 206, 86, 1)",
-                  ],
-                  borderWidth: 1,
-                },
-              ],
-            };
-            console.log(chartData);
-
-            const config = {
-              type: "bar",
-              data: chartData,
-              options: {
-                scales: {
-                  y: {
-                    beginAtZero: true,
-                  },
-                  x: {
-                    display: true,
-                  },
-                },
-                plugins: {
-                  legend: {
-                    display: true,
-                  },
-                  title: {
-                    display: true,
-                    text: "Kubios",
-                  },
-                },
-                interaction: {
-                  mode: "index",
-                },
-              },
-            };
-            const myChart = new Chart(
-              document.getElementById("myChart"),
-              config
-            );
-          });
-        })
-        .catch((error) => {
-          console.error(`Error fetching data: ${error}`);
-          clearLoadingDialog(); // Clear loading dialog
-          console.clear(); // Clear console
-          loadingDialog.innerHTML = `<p>Error fetching data: ${error}</p>`;
-
-          // Hide loading screen after 5 seconds
-=======
           // Extract stress index values from the three most recent data points
           const recentResults = data.results.slice(-3).map((item) => item.result.stress_index);
 
@@ -203,7 +134,6 @@ if (canvas) {
           clearLoadingDialog();
           console.clear();
           loadingDialog.innerHTML = `<p>Error fetching data: ${error}</p>`;
->>>>>>> Stashed changes
           setTimeout(() => {
             loadingOverlay.style.display = "none";
             loadingDialog.style.display = "none";
@@ -214,14 +144,13 @@ if (canvas) {
 
   // Event listener for Get Result button
   getResultButton.addEventListener("click", () => {
-    // Call the function to fetch and show data
+    
+     // Näytä chart-container nappulaa painaessa
+     chartContainer.style.display = 'block';
     fetchData();
   });
 });
-<<<<<<< Updated upstream
-=======
 
->>>>>>> Stashed changes
 function logOut(evt) {
   evt.preventDefault();
   localStorage.removeItem("token");

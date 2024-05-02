@@ -40,7 +40,8 @@ function createTable(data) {
     tr.appendChild(td2);
 
     const td3 = document.createElement("td");
-    td3.innerText = rivi.result.stress_index;
+    // Käytä toFixed() saadaksesi stressi-indeksin yhden desimaalin tarkkuudella
+    td3.innerText = parseFloat(rivi.result.stress_index).toFixed(1);
     tr.appendChild(td3);
 
     const td4 = document.createElement("td");
