@@ -1,31 +1,5 @@
-<<<<<<< HEAD
 DROP DATABASE IF EXISTS ChillCheck;
 -- muista pääset data baseen "use ChillCheck"
-=======
-
-DROP DATABASE IF EXISTS ChillCheck;
--- muista pääset data baseen "use ChillCheck"
--- PATCH /v2/user/ae4e3b6e-babf-4b11-918e-09d2d7e5b2b6 HTTP/1.1
--- Content-Type: application/json
--- Authorization: ...
-
--- {
---   "email": "test-user@kubioscloud.com",
---   "given_name": "Firstname",
---   "family_name": "Lastname",
---   "phone_number": "+358555555555",
---   "weight": 80.0,
---   "height": 1.80,
---   "hr_max": 200,
---   "hr_rest": 60,
---   "vo2max": 50.5,
---   "gender": "male",
---   "birthdate": "1980-01-01",
---   "company_name": "My Company"
--- }
-
--- lisää osa näistä database sekä put user/post user kohtaan
->>>>>>> 82a4ce269e0b24231835d8c192a0f40bc6075843
 CREATE DATABASE ChillCheck;
 
 USE ChillCheck;
