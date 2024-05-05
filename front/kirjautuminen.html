@@ -65,20 +65,25 @@
               Kirjaudu sisään
             </button>
             <!-- REGISTER LOGIN -->
-           <!-- <p class="register__login text--sm">
-              Rekisteröidy <a href="rekisteröinti.html"> tästä </a>
+            <p class="register__login text--sm">
+              Ohjeet tunnuksen luomiseen löytyy <a href=""> tästä </a>
             </p>
-          </div>-->
+          </div>
         </form>
-        <dialog id="register_dialog" class="registerbox">
-          <form class="dropdown_form">
-            <label for="professional">Oletko opiskelija vai ammattilainen:</label>
-            <select id="professional" name="professional" required>
-              <option value="">Select</option>
-              <option value="Ammattilainen">Ammattilainen</option>
-              <option value="Opiskelija">Opiskelija</option>
-              </select><br />
-            <input name="submit" type="submit" value="Seuraava" class="register">
+        <dialog id="information_dialog" class="informationbox">
+          <form class="information">
+            <div>
+              <h4 class="ohjeet">Kubios-tunnuksen luominen</h4>
+              <br />
+              <li>
+                Lataa sovellus KubiosHRV Google Play:sta tai Apple Storesta
+              </li>
+              <li>Luo tunnus</li>
+              <li>Määritä profiili</li>
+              <li>Kirjaudu sisään sivustoon Kubios-tunnuksella</li>
+            </div>
+            <br />
+            <button type="submit" name="submit" class="close">Sulje</button>
           </form>
         </dialog>
       </div>

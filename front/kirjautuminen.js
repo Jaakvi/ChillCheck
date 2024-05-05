@@ -3,12 +3,12 @@ import { fetchData } from "./fetch.js";
 document.addEventListener("DOMContentLoaded", function () {
   // JavaScript code
   // Open register dialog when "Rekisteröidy tästä" is clicked
-  // document
-  //   .querySelector(".register__login a")
-  //   .addEventListener("click", function (event) {
-  //     event.preventDefault(); // Prevent default link behavior
-  //     document.getElementById("register_dialog").showModal(); // Show register dialog
-  //   });
+  document
+    .querySelector(".register__login a")
+    .addEventListener("click", function (event) {
+      event.preventDefault(); // Prevent default link behavior
+      document.getElementById("information_dialog").showModal(); // Show register dialog
+    });
   const loginUser = document.querySelector(".button__login");
 
   loginUser.addEventListener("click", async (evt) => {
@@ -60,17 +60,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
   // Handle form submission in the register dialog
-  document
-    .querySelector("#register_dialog form")
-    .addEventListener("submit", function (event) {
-      event.preventDefault(); // Prevent default form submission behavior
-      const selectValue = document.getElementById("professional").value; // Get selected value from dropdown
-      if (selectValue === "Ammattilainen" || selectValue === "Opiskelija") {
-        // If a valid option is selected, redirect to the register page
-        localStorage.setItem("selectedOption", selectValue);
-        window.location.href = "rekisteröinti.html";
-      } else {
-        alert("Valitse vaihtoehto!"); // Alert user to select an option if none is selected
-      }
-    });
+  // document
+  //   .querySelector("#information_dialog form")
+  //   .addEventListener("submit", function (event) {
+  //     event.preventDefault(); // Prevent default form submission behavior
+  //   });
 });
