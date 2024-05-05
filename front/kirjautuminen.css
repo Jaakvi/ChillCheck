@@ -51,7 +51,6 @@ h3 {
   color: white;
 }
 
-
 input,
 button {
   border: none;
@@ -216,7 +215,7 @@ ion-icon {
   opacity: 0.75;
 }
 
-.registerbox {
+.informationbox {
   border-radius: 8px;
   margin: auto;
   background-color: rgb(138, 76, 67);
@@ -227,8 +226,7 @@ ion-icon {
       rgba(126, 111, 138, 1) 77%
     )
     no-repeat;
-    border: 2px solid hsl(0, 0%, 90%);
-  
+  border: 2px solid hsl(0, 0%, 90%);
 }
 .dropdown_form {
   border-radius: 8px;
@@ -253,15 +251,34 @@ ion-icon {
   padding: 5px;
 }
 
-.register {
+.information {
   border-radius: 8px;
-  border: 1px solid;
   margin-top: 10px;
   padding: 8px;
   font-size: 0.9em;
   font-weight: bold;
+  transition: border-color 0.25s;
+}
+
+.ohjeet {
+  font-size: larger;
+}
+
+.close {
+  border-radius: 8px;
+  border: 1px solid black;
+  padding: 0.6em 1.2em;
+  margin: 10px;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  /* background-color: #1a1a1a; */
   cursor: pointer;
   transition: border-color 0.25s;
+}
+
+.close:hover {
+  border-color: #646cff;
 }
 
 #login {
