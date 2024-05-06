@@ -82,7 +82,7 @@ const updateKubiosUser = async (req, res, next) => {
     return res.status().json({error: 400, message: 'bad request'});
   }
 
-  };
+};
 
 
 export {getUserData, getUserInfo, updateKubiosUser};
