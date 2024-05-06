@@ -3,7 +3,6 @@ import bcrypt from 'bcryptjs';
 import 'dotenv/config';
 import {selectUserByUsername} from '../models/user-models.mjs';
 
-// INSECURE LOGIN uses harcoded passwords only
 // returns user object if username & password match
 const postLogin = async (req, res) => {
   const {username, password} = req.body;

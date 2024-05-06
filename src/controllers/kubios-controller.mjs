@@ -2,6 +2,7 @@ import 'dotenv/config';
 import fetch from 'node-fetch';
 import { errorHandler, notFoundHandler } from '../middlewares/error-handler.mjs';
 import {customError} from '../middlewares/error-handler.mjs';
+import { response } from 'express';
 
 // Kubios API base URL should be set in .env
 const baseUrl = process.env.KUBIOS_API_URI;
@@ -58,5 +59,30 @@ const getUserInfo = async (req, res, next) => {
 
   };
 
+  const updateKubiosUser = async (req, res, next) => {
+    const {kubiosIdToken} = req.user;
+    const headers = new Headers();
+    headers.append('User-Agent', process.env.KUBIOS_USER_AGENT);
+    headers.append('Authorization', kubiosIdToken);
 
-export {getUserData, getUserInfo};
+    const response = await fetch(baseUrl + '/user/self', {
+      method: 'PUT',
+      headers: headers,
+      body:{
+        given_name,
+        family_name,
+      },
+
+    });
+    const update = await response.json();
+    if (response.status===200){
+        return res.json(update);
+    }
+    else if (response.error){
+      return res.status().json({error: 400, message: 'bad request'});
+    }
+
+    };
+
+
+export {getUserData, getUserInfo, updateKubiosUser};
