@@ -5,10 +5,10 @@ import {getUserData, getUserInfo} from '../controllers/kubios-controller.mjs';
 const kubiosRouter = express.Router();
 // /api/kubios/user-data endpoint
   /**
-   * @apiDefine Kubios
+   * @apiGroup Kubios
    * @api {get} /user-data Requests the users information
    * @apiName Kubiostesti
-   * @apiGroup Kubios
+   *
    * @apiPermission token
    *
    * @apiSuccess {Array} Results[] array of User results
