@@ -7,10 +7,7 @@ const kubiosRouter = express.Router();
   /**
    * @apiGroup Kubios
    * @api {get} /user-data Requests the users information
-   * @apiName Kubiostesti
-   *
    * @apiPermission token
-   *
    * @apiSuccess {Array} Results[] array of User results
    * @apiSuccess {Object} result.
    * @apiSuccess {String} user.username Username
