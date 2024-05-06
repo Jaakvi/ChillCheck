@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const chartContainer = document.getElementById("chart-container");
 
   // Piilota chart-container
-  chartContainer.style.display = 'none';
+  chartContainer.style.display = "none";
   // Function to reset the console
   function resetConsole() {
     console.clear(); // Clear console
@@ -37,116 +37,152 @@ document.addEventListener("DOMContentLoaded", () => {
         Authorization: "Bearer " + token,
       },
     };
+// Simuloi latausta 5 sekunnin ajan
+setTimeout(() => {
+  fetch(url, options)
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Verkkovastaus ei ollut kunnossa");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      // Piilota latausnäyttö
+      loadingOverlay.style.display = "none";
+      loadingDialog.style.display = "none";
 
-    // Simulate loading for 5 seconds
-    setTimeout(() => {
-      fetch(url, options)
-        .then((response) => {
-          if (!response.ok) {
-            throw new Error("Network response was not ok");
-          }
-          return response.json();
-        })
-        .then((data) => {
-          // Hide loading screen
-          loadingOverlay.style.display = "none";
-          loadingDialog.style.display = "none";
+      // Eksraktoidaan kolmen viimeisimmän tuloksen stressi-indeksiarvot
+      const recentResults = data.results
+        .slice(-3)
+        .map((item) => item.result.stress_index);
 
-          // Extract stress index values from the three most recent data points
-          const recentResults = data.results.slice(-3).map((item) => item.result.stress_index);
+      // Laske keskiarvo stressi-indeksistä
+      const averageStressIndex =
+        recentResults.reduce((sum, value) => sum + value, 0) /
+        recentResults.length;
 
-          // Get canvas element
-          const canvas = document.getElementById("myChart");
+      // Haetaan päivämäärät testien päivämääräksi
+      const testDates = data.results
+        .slice(-3)
+        .map((item) => new Date(item.create_timestamp).toLocaleDateString());
 
-// Create combined chart
-if (canvas) {
-  const ctx = canvas.getContext("2d");
-  const chartData = {
-    labels: ["Stress Index 1", "Stress Index 2", "Stress Index 3"],
-    datasets: recentResults.map((stressIndex, index) => ({
-      label: `Stress Index ${index + 1}`,
-      data: [index === 0 ? stressIndex : null, index === 1 ? stressIndex : null, index === 2 ? stressIndex : null],
-      backgroundColor: index === 0 ? "rgba(255, 99, 132, 0.2)" : index === 1 ? "rgba(54, 162, 235, 0.2)" : "rgba(255, 153, 51, 0.2)",
-      borderColor: index === 0 ? "rgba(255, 99, 132, 1)" : index === 1 ? "rgba(54, 162, 235, 1)" : "rgba(255, 153, 51, 1)",
-      borderWidth: 1,
-    })),
-  };
+      // Hae canvas-elementti
+      const canvas = document.getElementById("myChart");
 
+      // Luo yhdistetty kaavio
+      if (canvas) {
+        const ctx = canvas.getContext("2d");
+        const chartData = {
+          labels: testDates, // Käytä testien päivämääriä labels-taulukossa
+          datasets: [
+            {
+              label: "Stressi Indeksi",
+              data: recentResults,
+              backgroundColor: [
+                "rgba(255, 99, 132, 0.2)",
+                "rgba(54, 162, 235, 0.2)",
+                "rgba(255, 153, 51, 0.2)",
+              ],
+              borderColor: [
+                "rgba(255, 99, 132, 1)",
+                "rgba(54, 162, 235, 1)",
+                "rgba(255, 153, 51, 1)",
+              ],
+              borderWidth: 1,
+            },
+          ],
+        };
 
+        // Laske keskiarvoviivan paikat
+        const averageLinePositions = [
+          averageStressIndex,
+          averageStressIndex,
+          averageStressIndex,
+        ];
 
-
-
-
-  const config = {
-    type: "bar",
-    data: chartData,
-    options: {
-      maintainAspectRatio: false, // Disable aspect ratio to fill the container
-      scales: {
-        y: {
-          beginAtZero: true,
-        },
-        x: {
-          display: true,
-        },
-      },
-      plugins: {
-        legend: {
-          display: true,
-        },
-        title: {
-          display: true,
-          text: "Kubios Stress Index",
-        },
-        tooltip: {
-          mode: "index",
-          callbacks: {
-            label: function (context) {
-              const datasetLabel = context.dataset.label || '';
-              const value = context.parsed.y;
-              // Check if the value is not null before displaying it
-              if (value !== null) {
-                return `${datasetLabel}: ${value}`;
-              } else {
-                return ''; // Return an empty string for null values
-              }
-            }
-          }
-        }
-      },
-      interaction: {
-        mode: "index",
-      },
-    },
-  };
-
-
-
-  new Chart(ctx, config);
-} else {
-  console.error("Canvas element not found.");
-}
-
-
-        })
-        .catch((error) => {
-          console.error(`Error fetching data: ${error}`);
-          clearLoadingDialog();
-          console.clear();
-          loadingDialog.innerHTML = `<p>Error fetching data: ${error}</p>`;
-          setTimeout(() => {
-            loadingOverlay.style.display = "none";
-            loadingDialog.style.display = "none";
-          }, 2000);
+        // Lisää keskiarvoviiva kaaviodataan
+        chartData.datasets.push({
+          type: "line",
+          label: "Kolmen testin keskiarvo",
+          data: averageLinePositions,
+          borderColor: "rgba(75, 192, 192, 1)",
+          backgroundColor: "rgba(75, 192, 192, 0.2)",
+          borderWidth: 2,
+          fill: false,
+          pointRadius: 0,
+          yAxisID: "y",
         });
-    }, 2000); // Simulate loading for 5 seconds
+
+        const config = {
+          type: "bar",
+          data: chartData,
+          options: {
+            maintainAspectRatio: false, // Poista kuvasuhteen rajoitus täyttääksesi kontin
+            scales: {
+              y: {
+                beginAtZero: true,
+                ticks: {
+                  callback: function (value, index, values) {
+                    return value.toFixed(1); // Muotoile arvot yhden desimaalin tarkkuudella
+                  },
+                },
+              },
+              x: {
+                display: true,
+              },
+            },
+            plugins: {
+              legend: {
+                display: true,
+              },
+              title: {
+                display: true,
+                text: "Kubios Stressi Indeksi",
+              },
+              tooltip: {
+                mode: "index",
+                callbacks: {
+                  label: function (context) {
+                    const datasetLabel = context.dataset.label || "";
+                    const value = context.parsed.y;
+                    // Tarkista, ettei arvo ole null ennen kuin näytetään se
+                    if (!isNaN(value)) {
+                      return `${datasetLabel}: ${value.toFixed(1)}`; // Muotoile arvo yhden desimaalin tarkkuudella
+                    } else {
+                      return ""; // Palauta tyhjä merkkijono, jos arvo on null
+                    }
+                  },
+                },
+              },
+            },
+            interaction: {
+              mode: "index",
+            },
+          },
+        };
+
+        new Chart(ctx, config);
+      } else {
+        console.error("Canvas-elementtiä ei löytynyt.");
+      }
+    })
+    .catch((error) => {
+      console.error(`Virhe datan hakemisessa: ${error}`);
+      clearLoadingDialog();
+      console.clear();
+      loadingDialog.innerHTML = `<p>Virhe datan hakemisessa: ${error}</p>`;
+      setTimeout(() => {
+        loadingOverlay.style.display = "none";
+        loadingDialog.style.display = "none";
+      }, 2000);
+    });
+}, 2000); // Simuloi latausta 5 sekunnin ajan
   }
 
   // Event listener for Get Result button
   getResultButton.addEventListener("click", () => {
-
-     // Näytä chart-container nappulaa painaessa
-     chartContainer.style.display = 'block';
+    // Näytä chart-container nappulaa painaessa
+    chartContainer.style.display = "block";
     fetchData();
   });
 });
