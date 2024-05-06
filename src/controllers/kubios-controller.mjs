@@ -59,30 +59,30 @@ const getUserInfo = async (req, res, next) => {
 
   };
 
-const updateKubiosUser = async (req, res, next) => {
-  const {kubiosIdToken} = req.user;
-  const headers = new Headers();
-  headers.append('User-Agent', process.env.KUBIOS_USER_AGENT);
-  headers.append('Authorization', kubiosIdToken);
+// const updateKubiosUser = async (req, res, next) => {
+//   const {kubiosIdToken} = req.user;
+//   const headers = new Headers();
+//   headers.append('User-Agent', process.env.KUBIOS_USER_AGENT);
+//   headers.append('Authorization', kubiosIdToken);
 
-  const response = await fetch(baseUrl + '/user/self', {
-    method: 'PUT',
-    headers: headers,
-    body:{
-      given_name,
-      family_name,
-    },
+//   const response = await fetch(baseUrl + '/user/self', {
+//     method: 'PUT',
+//     headers: headers,
+//     body:{
+//       given_name,
+//       family_name,
+//     },
 
-  });
-  const update = await response.json();
-  if (response.status===200){
-      return res.json(update);
-  }
-  else if (response.error){
-    return res.status().json({error: 400, message: 'bad request'});
-  }
+//   });
+//   const update = await response.json();
+//   if (response.status===200){
+//       return res.json(update);
+//   }
+//   else if (response.error){
+//     return res.status().json({error: 400, message: 'bad request'});
+//   }
 
-};
+// };
 
 
 export {getUserData, getUserInfo, updateKubiosUser};
