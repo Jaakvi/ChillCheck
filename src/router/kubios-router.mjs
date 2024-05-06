@@ -1,6 +1,6 @@
 import express from 'express';
 import {authenticateToken} from '../middlewares/authentication.mjs';
-import {getUserData, getUserInfo, updateKubiosUser} from '../controllers/kubios-controller.mjs';
+import {getUserData, getUserInfo} from '../controllers/kubios-controller.mjs';
 
 const kubiosRouter = express.Router();
 
