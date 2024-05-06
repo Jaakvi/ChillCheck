@@ -10,7 +10,7 @@ const kubiosRouter = express.Router();
    * @apiGroup Kubios
    * @apiPermission token
    *
-   * @apiSuccess {Array} user[] array of User results
+   * @apiSuccess {Array} Results[] array of User results
    * @apiSuccess {Object} result.
    * @apiSuccess {String} user.username Username
    * @apiSuccess {String} user.user_level Userlevel of the User.

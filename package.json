@@ -16,11 +16,11 @@
   "author": "AuraSalomaa",
   "license": "ISC",
   "apidoc": {
-    "title": "Health Diary API documentation",
-    "url": "http://127.0.0.1/docs",
+    "title": "Chillcheckapi",
+    "url": "https://hyte-server-aura.northeurope.cloudapp.azure.com/docs",
     "order": [
-      "Entry"
-    ]
+    "Kubios"
+  ]
   },
   "devDependencies": {
     "eslint": "^8.56.0",
