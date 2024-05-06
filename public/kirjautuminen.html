@@ -4,16 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kirjautuminen</title>
-    <script type="module" crossorigin src="/dist/assets/login-DMKpgxV4.js"></script>
-    <link rel="modulepreload" crossorigin href="/dist/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="modulepreload" crossorigin href="/dist/assets/fetch-CGUiTqyx.js">
-    <link rel="stylesheet" crossorigin href="/dist/assets/login-CJ536WXr.css">
+    <script type="module" crossorigin src="./assets/login-BapmA3Lo.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="./assets/fetch-CGUiTqyx.js">
+    <link rel="stylesheet" crossorigin href="./assets/login-D8pTcMUk.css">
   </head>
   <body>
     <nav>
       <button id="home"><a href="etusivu.html"> Etusivu </a></button>
-
-      <button id="login">Kirjaudu sisään</button>
     </nav>
     <h1>ChillCheck</h1>
 
@@ -71,19 +69,21 @@
             </button>
             <!-- REGISTER LOGIN -->
             <p class="register__login text--sm">
-              Rekisteröidy <a href="rekisteröinti.html"> tästä </a>
+              Ohjeet tunnuksen luomiseen löytyy <a href=""> tästä </a>
             </p>
           </div>
         </form>
-        <dialog id="register_dialog" class="registerbox">
-          <form class="dropdown_form">
-            <label for="professional">Oletko opiskelija vai ammattilainen:</label>
-            <select id="professional" name="professional" required>
-              <option value="">Select</option>
-              <option value="Ammattilainen">Ammattilainen</option>
-              <option value="Opiskelija">Opiskelija</option>
-              </select><br />
-            <input name="submit" type="submit" value="Seuraava" class="register">
+        <dialog id="information_dialog" class="informationbox">
+          <form class="information">
+            <div>
+              <h4 class="ohjeet">Kubios-tunnuksen luominen</h4><br>
+                <li>Lataa sovellus KubiosHRV Google Play:sta tai Apple Storesta</li>
+                <li>Luo tunnus</li>
+                <li>Määritä profiili</li>
+                <li>Kirjaudu sisään  sivustoon Kubios-tunnuksella</li>
+            </div>
+            <br />
+            <button type="submit" name="submit" class="close">Sulje</button>
           </form>
         </dialog>
       </div>

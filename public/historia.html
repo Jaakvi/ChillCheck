@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Historia</title>
-    <script type="module" crossorigin src="/dist/assets/history-lKsSvHz6.js"></script>
-    <link rel="modulepreload" crossorigin href="/dist/assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="modulepreload" crossorigin href="/dist/assets/fetch-CGUiTqyx.js">
-    <link rel="stylesheet" crossorigin href="/dist/assets/styles-B9KX3G_P.css">
+    <script type="module" crossorigin src="./assets/history-Cj88D687.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
+    <link rel="modulepreload" crossorigin href="./assets/fetch-CGUiTqyx.js">
+    <link rel="stylesheet" crossorigin href="./assets/styles-BGZmrqur.css">
   </head>
   <body>
     <header>
@@ -18,20 +18,27 @@
         <button id="logout"> <a href="kirjautuminen.html"> Kirjaudu ulos </a> </button>
       </nav>
     </header>
-    <!-- sssss -->
     <main>
       <h1>ChillCheck</h1>
 
     <div>
+      <h3>Stressi indeksi </h3>
+       <p> Viitearvot stressi-indeksille voivat vaihdella eri ihmisillä
+         ja eri tilanteissa. Yleensä stressi-indeksin arvojen
+         tulkinnassa on hyvä ottaa huomioon yksilölliset erot ja
+         tilanteen konteksti.Stressitasot voivat vaihdella päivästä toiseen riippuen eri tekijöistä,
+         kuten unen laadusta, fyysisestä aktiivisuudesta, ja psyykkisestä hyvinvoinnista.
+         Tulostamme taulukon, jossa näkyy kaikki tehdyt testit ja niiden stressi-indeksit.
+         Tämä auttaa käyttäjiä hahmottamaan stressitasojensa vaihtelut ajan mittaan ja tunnistamaan mahdollisia stressitekijöitä elämässään. </p>
         <h3> Historia </h3>
         <table class="styled-table">
           <thead>
             <!-- Käytetään Timestamp, (freq domain LF power_nu, LF power prc, RESULTS Stress_index) -->
             <tr>
-              <th>Date</th>
-              <th>Mood</th>
-              <th>Stress index</th>
-              <th>Notes</th>
+              <th>Päivämäärä</th>
+              <th>Testin laatu</th>
+              <th>Stressi indeksi</th>
+              <th>Muistiinpanot</th>
             </tr>
           </thead>
           <tbody class="tbody">
@@ -47,8 +54,7 @@
 
     </main>
     <div id="historypage_picture">
-      <img src="/dist/assets/medor-BNSGgY3Z.jpg" alt="human" id="human_meditating" />
-    </div>
-
+      <img src="./assets/medor-BNSGgY3Z.jpg" alt="human" id="human_meditating" />
+    </div>
   </body>
 </html>
