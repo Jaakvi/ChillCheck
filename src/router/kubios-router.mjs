@@ -5,8 +5,9 @@ import {getUserData, getUserInfo} from '../controllers/kubios-controller.mjs';
 const kubiosRouter = express.Router();
 // /api/kubios/user-data endpoint
   /**
+   * @apiDefine Kubios
    * @api {get} /user-data Requests the users information
-   * @apiName KubiosInformation
+   * @apiName Kubiostesti
    * @apiGroup Kubios
    * @apiPermission token
    *
@@ -17,7 +18,6 @@ const kubiosRouter = express.Router();
    *
    * TODO: add example response
    *
-   * @apiUse InvalidTokenError
    */
 
 kubiosRouter

@@ -19,8 +19,8 @@
     "title": "Chillcheckapi",
     "url": "https://hyte-server-aura.northeurope.cloudapp.azure.com/docs",
     "order": [
-    "Kubios"
-  ]
+      "Kubios"
+    ]
   },
   "devDependencies": {
     "eslint": "^8.56.0",
@@ -33,6 +33,7 @@
     "dotenv": "^16.4.1",
     "express": "^4.18.3",
     "express-validator": "^7.0.1",
+    "jsdoc": "^4.0.3",
     "jsonwebtoken": "^9.0.2",
     "mysql2": "^3.9.7",
     "node-fetch": "^3.3.2",
