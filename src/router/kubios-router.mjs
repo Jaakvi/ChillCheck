@@ -35,10 +35,9 @@ const kubiosRouter = express.Router();
                     "VLF_power_prc": 12.43319584254917,
                     "tot_power": 385.9369341632949
                 },
+  * @api {get} /user-info Requests the users account information
   * @apiname getUserprofile
   * @apiGroup Kubios
-  *
-  * @api {get} /user-info Requests the users account information
   * @apiPermission token
   * @apiSuccessExample {json} Success-Response
    * {
