@@ -10,6 +10,18 @@ import {
   selectUserByEmail,
   selectUserById,
 } from '../models/user-models.mjs';
+/**
+ * Authentication resource controller using Kubios API for login
+* @module controllers/auth-controller
+* @author Aurora
+* @requires jsonwebtoken
+* @requires bcryptjs
+* @requires dotenv
+* @requires models/user-model
+* @requires middlewares/error-handler
+* @exports postLogin
+* @exports getMe
+*/
 
 // Kubios API base URL should be set in .env
 const baseUrl = process.env.KUBIOS_API_URI;

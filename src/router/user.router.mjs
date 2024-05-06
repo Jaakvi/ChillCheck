@@ -14,19 +14,6 @@ import { validationErrorHandler } from '../middlewares/error-handler.mjs';
 
 const userRouter = express.Router();
 
-/**
- * @api {get} /users Request user list
- * @apiName GetUsers
- * @apiGroup Users
- * @apiPermission token
- *
- * @apiSuccess {Array} user[] array of Users.
- * @apiSuccess {object} user User object.
- * @apiSuccess {number} user.user_id Id of the User.
- * @apiSuccess {String} user.username Username.
- *
- *
- */
 // /user endpoint
 userRouter.route('/')
   // list users
