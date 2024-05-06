@@ -37,140 +37,148 @@ document.addEventListener("DOMContentLoaded", () => {
         Authorization: "Bearer " + token,
       },
     };
-// Simuloi latausta 5 sekunnin ajan
-setTimeout(() => {
-  fetch(url, options)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error("Verkkovastaus ei ollut kunnossa");
-      }
-      return response.json();
-    })
-    .then((data) => {
-      // Piilota latausnäyttö
-      loadingOverlay.style.display = "none";
-      loadingDialog.style.display = "none";
+    // Simuloi latausta 5 sekunnin ajan
+    setTimeout(() => {
+      fetch(url, options)
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error("Verkkovastaus ei ollut kunnossa");
+          }
+          return response.json();
+        })
+        .then((data) => {
+          // Piilota latausnäyttö
+          loadingOverlay.style.display = "none";
+          loadingDialog.style.display = "none";
 
-      // Eksraktoidaan kolmen viimeisimmän tuloksen stressi-indeksiarvot
-      const recentResults = data.results
-        .slice(-3)
-        .map((item) => item.result.stress_index);
+          // Eksraktoidaan kolmen viimeisimmän tuloksen stressi-indeksiarvot
+          const recentResults = data.results
+            .slice(-3)
+            .map((item) => item.result.stress_index);
 
-      // Laske keskiarvo stressi-indeksistä
-      const averageStressIndex =
-        recentResults.reduce((sum, value) => sum + value, 0) /
-        recentResults.length;
+          // Laske keskiarvo stressi-indeksistä
+          const averageStressIndex =
+            recentResults.reduce((sum, value) => sum + value, 0) /
+            recentResults.length;
 
-      // Haetaan päivämäärät testien päivämääräksi
-      const testDates = data.results
-        .slice(-3)
-        .map((item) => new Date(item.create_timestamp).toLocaleDateString());
+          // Haetaan päivämäärät testien päivämääräksi
+          const testDates = data.results
+            .slice(-3)
+            .map((item) => new Date(item.create_timestamp).toLocaleDateString());
 
-      // Hae canvas-elementti
-      const canvas = document.getElementById("myChart");
+          // Hae canvas-elementti
+          const canvas = document.getElementById("myChart");
 
-      // Luo yhdistetty kaavio
-      if (canvas) {
-        const ctx = canvas.getContext("2d");
-        const chartData = {
-          labels: testDates, // Käytä testien päivämääriä labels-taulukossa
-          datasets: [
-            {
-              label: "Stressi Indeksi",
-              data: recentResults,
-              backgroundColor: [
-                "rgba(255, 99, 132, 0.2)",
-                "rgba(54, 162, 235, 0.2)",
-                "rgba(255, 153, 51, 0.2)",
+          // Luo yhdistetty kaavio
+          if (canvas) {
+            const ctx = canvas.getContext("2d");
+            const chartData = {
+              labels: testDates, // Käytä testien päivämääriä labels-taulukossa
+              datasets: [
+                {
+                  label: "Stressi Indeksi",
+                  data: recentResults,
+                  backgroundColor: [
+                    "rgba(255, 99, 132, 0.2)",
+                    "rgba(54, 162, 235, 0.2)",
+                    "rgba(255, 153, 51, 0.2)",
+                  ],
+                  borderColor: [
+                    "rgba(255, 99, 132, 1)",
+                    "rgba(54, 162, 235, 1)",
+                    "rgba(255, 153, 51, 1)",
+                  ],
+                  borderWidth: 1,
+                },
               ],
-              borderColor: [
-                "rgba(255, 99, 132, 1)",
-                "rgba(54, 162, 235, 1)",
-                "rgba(255, 153, 51, 1)",
-              ],
-              borderWidth: 1,
-            },
-          ],
-        };
+            };
 
-        // Laske keskiarvoviivan paikat
-        const averageLinePositions = [
-          averageStressIndex,
-          averageStressIndex,
-          averageStressIndex,
-        ];
+            // Laske keskiarvoviivan paikat
+            const averageLinePositions = [
+              averageStressIndex,
+              averageStressIndex,
+              averageStressIndex,
+            ];
 
-        // Lisää keskiarvoviiva kaaviodataan
-        chartData.datasets.push({
-          type: "line",
-          label: "Kolmen testin keskiarvo",
-          data: averageLinePositions,
-          borderColor: "rgba(75, 192, 192, 1)",
-          backgroundColor: "rgba(75, 192, 192, 0.2)",
-          borderWidth: 2,
-          fill: false,
-          pointRadius: 0,
-          yAxisID: "y",
-        });
+            // Lisää keskiarvoviiva kaaviodataan
+            chartData.datasets.push({
+              type: "line",
+              label: "Kolmen testin keskiarvo",
+              data: averageLinePositions,
+              borderColor: "rgba(75, 192, 192, 1)",
+              backgroundColor: "rgba(75, 192, 192, 0.2)",
+              borderWidth: 2,
+              fill: false,
+              pointRadius: 0,
+              yAxisID: "y",
+            });
 
-        const config = {
-          type: "bar",
-          data: chartData,
-          options: {
-            maintainAspectRatio: false, // Poista kuvasuhteen rajoitus täyttääksesi kontin
-            scales: {
-              y: {
-                beginAtZero: true,
-                ticks: {
-                  callback: function (value, index, values) {
-                    return value.toFixed(1); // Muotoile arvot yhden desimaalin tarkkuudella
+            const config = {
+              type: "bar",
+              data: chartData,
+              options: {
+                maintainAspectRatio: false, // Poista kuvasuhteen rajoitus täyttääksesi kontin
+                scales: {
+                  y: {
+                    beginAtZero: true,
+                    ticks: {
+                      callback: function (value, index, values) {
+                        return value.toFixed(2); // Muotoile arvot kahden desimaalin tarkkuudella
+                      },
+                    },
+                  },
+                  x: {
+                    display: true,
                   },
                 },
-              },
-              x: {
-                display: true,
-              },
-            },
-            plugins: {
-              legend: {
-                display: true,
-              },
-              title: {
-                display: true,
-                text: "Kubios Stressi Indeksi",
-              },
-              tooltip: {
-                mode: "index",
-                callbacks: {
-                  label: function (context) {
-                    const datasetLabel = context.dataset.label || "";
-                    const value = context.parsed.y;
-                    // Tarkista, ettei arvo ole null ennen kuin näytetään se
-                    if (!isNaN(value)) {
-                      return `${datasetLabel}: ${value.toFixed(1)}`; // Muotoile arvo yhden desimaalin tarkkuudella
-                    } else {
-                      return ""; // Palauta tyhjä merkkijono, jos arvo on null
-                    }
+                plugins: {
+                  legend: {
+                    display: true,
+                  },
+                  title: {
+                    display: true,
+                    text: "Kubios Stressi Indeksi",
+                  },
+                  tooltip: {
+                    mode: "index",
+                    callbacks: {
+                      label: function (context) {
+                        const datasetLabel = context.dataset.label || "";
+                        const value = context.parsed.y;
+                        // Tarkista, ettei arvo ole null ennen kuin näytetään se
+                        if (!isNaN(value)) {
+                          return `${datasetLabel}: ${value.toFixed(2)}`; // Muotoile arvo kahden desimaalin tarkkuudella
+                        } else {
+                          return ""; // Palauta tyhjä merkkijono, jos arvo on null
+                        }
+                      },
+                    },
                   },
                 },
+                interaction: {
+                  mode: "index",
+                },
               },
-            },
-            interaction: {
-              mode: "index",
-            },
-          },
-        };
+            };
 
-        new Chart(ctx, config);
-      } else {
-        console.error("Canvas-elementtiä ei löytynyt.");
-      }
-    })
-    .catch((error) => {
-      console.error(`Virhe datan hakemisessa: ${error}`);
-      clearLoadingDialog();
-      console.clear();
-      loadingDialog.innerHTML = `<p>Virhe datan hakemisessa: ${error}</p>`;
+
+            new Chart(ctx, config);
+
+            // Haetaan viestilaatikko ja stressi-indeksi
+            const messageBox = document.getElementById("stress-message");
+
+            // Generoidaan viesti ja asetetaan se viestilaatikkoon
+            const message = generateStressMessage(averageStressIndex);
+            messageBox.textContent = message;
+          } else {
+            console.error("Canvas-elementtiä ei löytynyt.");
+          }
+        })
+        .catch((error) => {
+          console.error(`Virhe datan hakemisessa: ${error}`);
+          clearLoadingDialog();
+          console.clear();
+          loadingDialog.innerHTML = `<p>Virhe datan hakemisessa: ${error}</p>`;
       setTimeout(() => {
         loadingOverlay.style.display = "none";
         loadingDialog.style.display = "none";
@@ -186,6 +194,28 @@ setTimeout(() => {
     fetchData();
   });
 });
+
+// Funktio stressiviestin generoimiseen
+function generateStressMessage(averageStressIndex) {
+  let message = "";
+  if (averageStressIndex < 10) {
+    message = "Stressi-indeksi on alle 10, olet hyvällä mallilla!";
+  } else if (averageStressIndex >= 10 && averageStressIndex <= 20) {
+    message = "Stressi-indeksi on koholla, ota hieman rennommin.";
+  } else {
+    message = "Stressi-indeksi on yli 20, sinun kannattaa ottaa välittömästi itsellesi aikaa ja harkita rentoutumista.";
+  }
+  return message;
+}
+
+// Haetaan viestilaatikko ja stressi-indeksi
+const messageBox = document.getElementById("stress-message");
+const stressIndex = averageStressIndex; // Oletan, että averageStressIndex on jo määritelty muualla
+
+// Generoidaan viesti ja asetetaan se viestilaatikkoon
+const message = generateStressMessage(stressIndex);
+messageBox.textContent = message;
+
 
 function logOut(evt) {
   evt.preventDefault();
