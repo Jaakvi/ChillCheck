@@ -8,7 +8,8 @@ const kubiosRouter = express.Router();
    * @apiGroup Kubios
    * @api {get} /user-data Requests the users information
    * @apiPermission token
-   * @apiSuccessExample {json} Success-Response: {
+   * @apiSuccessExample {json} Success-Response
+   * {
     "results": [
         {
             "create_timestamp": "2024-02-09T08:40:57.445402+00:00",
@@ -32,9 +33,27 @@ const kubiosRouter = express.Router();
                     "VLF_power": 47.98429485325251,
                     "VLF_power_prc": 12.43319584254917,
                     "tot_power": 385.9369341632949
-                }, {Array} Results[] array of User results
-   *
+                },
+  * @api {get} /user-info Requests the users account information
+  * @apiPermission token
+  * @apiSuccessExample {json} Success-Response
+   * {
+    {
+    "status": "ok",
+    "user": {
+        "email": "john.doe@email.com",
+        "family_name": "Doe",
+        "given_name": "John",
+        "sub": "0ac6f509-3411-4d41-94b7-90d863ikf42bd"
+    }
+}
+  *
+  *
+
+
+
    */
+
 
 kubiosRouter
 
