@@ -85,4 +85,4 @@ const getUserInfo = async (req, res, next) => {
 // };
 
 
-export {getUserData, getUserInfo, updateKubiosUser};
+export {getUserData, getUserInfo};
