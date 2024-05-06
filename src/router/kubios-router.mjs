@@ -6,6 +6,7 @@ const kubiosRouter = express.Router();
 // /api/kubios/user-data endpoint
   /**
    * @apiGroup Kubios
+   * @apiname Userdata
    * @api {get} /user-data Requests the users information
    * @apiPermission token
    * @apiSuccessExample {json} Success-Response
@@ -34,6 +35,8 @@ const kubiosRouter = express.Router();
                     "VLF_power_prc": 12.43319584254917,
                     "tot_power": 385.9369341632949
                 },
+
+  *@apiname User profile in kubios
   * @api {get} /user-info Requests the users account information
   * @apiPermission token
   * @apiSuccessExample {json} Success-Response
