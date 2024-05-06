@@ -7,6 +7,5 @@ const kubiosRouter = express.Router();
 kubiosRouter
   .get('/user-data', authenticateToken, getUserData)
   .get('/user-info', authenticateToken, getUserInfo)
-  .put('/update', authenticateToken, updateKubiosUser)
 
 export default kubiosRouter;
