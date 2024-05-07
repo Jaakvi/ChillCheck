@@ -8,7 +8,7 @@ const authRouter = express.Router();
 
 // user login
 /**
-   * @api {POST} /login login to kubios servicies
+   * @api {POST} /auth/login login to kubios servicies
    * @apiName Login
    * @apiGroup Authentication
    * @apiPermission token
