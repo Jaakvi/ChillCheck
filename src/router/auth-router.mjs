@@ -12,7 +12,7 @@ const authRouter = express.Router();
    * @apiName Login
    * @apiGroup Authentication
    * @apiPermission token
-   * @apiSuccessExample
+   * @apiSuccessExample {json} Success-Response 200
    * {
     "message": "Logged in successfully with Kubios",
     "user": {
@@ -60,7 +60,7 @@ const authRouter = express.Router();
    * @apiSuccess {array} user array including user information email, lastname, firstname, and sub id.
    * @apiSuccess {String} Bearer token
    *
-   * @apiErrorExample
+   * @apiErrorExample {json} 401 username or password incorrect
    * {
     "error": {
         "message": "Login with Kubios failed due bad username/password",
@@ -68,6 +68,12 @@ const authRouter = express.Router();
         "errors": ""
     }
   }
+
+  * @apiError {array} including message, status, error information
+  * @apiError {String} message of the error that backend sent
+  * @apiError {number} Error code
+  * @apiError {string} not yet implemented fully
+
 
    */
 
