@@ -1,4 +1,5 @@
 import { fetchData } from "./fetch.js";
+import "./styles.css";
 
 const allButton = document.querySelector(".get_users");
 allButton.addEventListener("click", getEntries);
@@ -19,6 +20,7 @@ async function getEntries() {
     // käsitellään fetchData funktiosta tullut JSON
     // console.log(data.results);
     createTable(data);
+    console.log(data);
     // document.getElementById("name").innerHTML = data.user.username;
   });
 }
@@ -28,7 +30,7 @@ function createTable(data) {
   tbody.innerHTML = "";
 
   data.results.slice(-10).forEach((rivi) => {
-    // console.log(rivi.daily_result);
+    console.log(rivi.user_comment);
     const tr = document.createElement("tr");
 
     const td1 = document.createElement("td");
@@ -46,16 +48,16 @@ function createTable(data) {
 
     const td4 = document.createElement("td");
 
-    //   const noteButton = document.createElement("button");
-    //   noteButton.className = "check";
-    //   noteButton.innerText = "Notes";
+    const noteButton = document.createElement("button");
+    noteButton.className = "check";
+    noteButton.innerText = "Avaa";
 
-    //   noteButton.addEventListener("click", function () {
-    //     const notes = rivi.notes;
-    //     openDialog(notes);
-    //   });
+    noteButton.addEventListener("click", function () {
+      const notes = rivi.user_comment;
+      openDialog(notes);
+    });
 
-    //   td4.appendChild(noteButton);
+    td4.appendChild(noteButton);
     tr.appendChild(td4);
 
     //   const td5 = document.createElement("td");
@@ -75,6 +77,26 @@ function createTable(data) {
     tbody.appendChild(tr);
   });
 }
+
+function openDialog(notes) {
+  const dialog = document.getElementById("notesDialog");
+  const header = document.getElementById("header");
+  const dialogText = document.getElementById("dialogText");
+  header.innerHTML = "";
+
+  const notesHeader = document.createElement("h4");
+  notesHeader.textContent = "Muistiinpano: ";
+  dialogText.innerText = notes;
+
+  header.appendChild(notesHeader);
+  dialog.showModal();
+}
+
+// Sulje dialogi
+document.getElementById("closeNotes").addEventListener("click", function () {
+  document.getElementById("notesDialog").close();
+});
+
 // logout nappula
 document.getElementById("logout").addEventListener("click", logOut);
 

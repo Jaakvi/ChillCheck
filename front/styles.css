@@ -24,7 +24,7 @@ nav {
     background-color: rgb(196, 175, 175);
     background-color: rgb(233, 136, 103);*/
   z-index: 999;
-  
+
   position: relative;
   background-color: hsla(0, 0%, 10%, 0.315);
   border: 2px solid hsl(0, 0%, 90%);
@@ -97,7 +97,7 @@ p {
   text-align: center;
   color: white;
   line-height: 35px;
-  
+
 }
 
 h1 {
@@ -319,7 +319,7 @@ p {
   display: flex;
   justify-content: center;
   margin: 3vh;
-  
+
 }
 
 #historypage_picture {
@@ -578,6 +578,51 @@ ion-icon {
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
+}
+
+.notes-dialog {
+  border-radius: 10px;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.notes-dialog div {
+  text-align: center;
+}
+
+.notes-dialog button:hover {
+  background-color: #75483d;
+}
+
+#dialogText {
+  color: black;
+}
+
+.notes-dialog button {
+  position: relative;
+  bottom: 0;
+  left: 45%;
+  transform: translateX(-50%);
+  margin-top: 10px;
+  padding: 8px 20px;
+  background-color: #1e1e1f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.check {
+  border-radius: 5px;
+  padding: 0.3rem 0.6rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+.check:hover {
+  background-color: gray;
 }
 
 .get_users:hover {
