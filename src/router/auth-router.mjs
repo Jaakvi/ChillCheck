@@ -55,10 +55,20 @@ const authRouter = express.Router();
     2MDIxMDIsImV4cCI6MTcxMzYwNTcwMn0.HovA_df76ybs1rdrvgSgg1EoAwwupp
     SAsLP3AsRcxLk"
 }
+
    * @apiSuccess {String} message of welcoming you to kubios
    * @apiSuccess {array} user array including user information email, lastname, firstname, and sub id.
    * @apiSuccess {String} Bearer token
    *
+   * @apiErrorExample
+   * {
+    "error": {
+        "message": "Login with Kubios failed due bad username/password",
+        "status": 401,
+        "errors": ""
+    }
+  }
+
    */
 
 authRouter.post('/login', postLogin)
