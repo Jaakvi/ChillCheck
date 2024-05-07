@@ -17,12 +17,6 @@ html {
 }
 
 nav {
-  /* display: flex;
-    justify-content: space-between;
-    width: 100%;
-    height: 70px;
-    background-color: rgb(196, 175, 175);
-    background-color: rgb(233, 136, 103);*/
   z-index: 999;
 
   position: relative;
@@ -33,8 +27,6 @@ nav {
   width: 100%;
   height: 70px;
   display: flex;
-  /*padding: 2.5rem 2rem 3.5rem;
-  width: 26.25rem;*/
 }
 
 nav:after {
@@ -89,7 +81,6 @@ li {
   display: flex;
   margin: 30px;
   color: white;
-  /*text-align: center;*/
 }
 
 p {
@@ -97,6 +88,7 @@ p {
   text-align: center;
   color: white;
   line-height: 35px;
+  margin: 10px;
 }
 
 h1 {
@@ -123,11 +115,6 @@ h3 {
   color: white;
 }
 
-p {
-  display: flex;
-  justify-content: center;
-  margin: 10px;
-}
 /*NAPIT*/
 #login {
   margin-left: auto;
@@ -144,7 +131,6 @@ p {
 }
 
 #logout {
-  /*margin-left: auto;*/
   color: white;
   width: 100px;
   background: rgb(219, 165, 56);
@@ -161,14 +147,6 @@ p {
   color: white;
   width: 100px;
   height: 40px;
-  /*background: rgb(219, 165, 56);
-  background: linear-gradient(
-      225deg,
-      rgba(219, 165, 56, 1) 0%,
-      rgba(240, 126, 126, 1) 50%,
-      rgba(126, 111, 138, 1) 77%
-    )
-    no-repeat;*/
   background-color: rgb(131, 109, 152);
   border: 2px solid floralwhite;
   display: flex;
@@ -192,7 +170,7 @@ p {
   color: black;
   font-weight: bold;
 }
-
+/*LOADING SCREEN */
 #loading-overlay {
   display: none;
   position: fixed;
@@ -200,7 +178,7 @@ p {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 999; /* Ensure the overlay is behind the dialog */
 }
 
@@ -216,54 +194,55 @@ p {
   padding: 20px;
   z-index: 1000;
 }
-
+/*CHART*/
 #myChart {
   background-color: white;
 }
 #chart-container {
-  display: flex; /* Use flexbox layout */
-  justify-content: space-between; /* Space evenly between the elements */
-  width: 80%; /* Adjust width as needed */
-  max-width: 900px; /* Maximum width */
-  height: 400px; /* Adjust height as needed */
-  margin: 0 auto; /* Center horizontally */
-  border: 1px solid #ccc; /* Optional border */
-  border-radius: 5px; /* Optional border radius */
-  overflow: hidden; /* Hide overflow */
-  position: relative; /* Positioning context for canvas */
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 900px;
+  height: 400px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  position: relative;
 }
 
 #chart-container div {
-  flex: 1; /* Equal width for each chart */
-  padding: 10px; /* Add padding for spacing */
+  flex: 1;
+  padding: 10px;
   padding-bottom: 10px;
 }
 #chart-container {
-  margin: auto; /* Voit säätää arvoa tarpeen mukaan */
-  margin-bottom: 20px; /* Voit säätää arvoa tarpeen mukaan */
+  margin: auto;
+  margin-bottom: 20px;
   margin-top: 20px;
 }
 
 #chart-container canvas {
   width: 100%;
   height: 100%;
-  display: block; /* Ensure canvas fills its container */
+  display: block;
 }
 /* puhekupla */
 #stress-message {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-  margin-bottom: 20vh;
-  width: 70%; /* Pienennetty leveys */
-  height: 70%; /* Pienennetty korkeus */
+  align-items: flex-start;
+  width: 80%;
+  max-width: 900px;
   background-color: white;
-  border-radius: 15px; /* Pyöreät reunat */
-  padding: 20px; /* Lisää paddingia */
-  margin:auto;
-  margin-bottom: 2vh;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 20px auto;
+  overflow: hidden;
+  text-align: center;
+  height: auto;
 }
+
 #loading-dialog p {
   text-align: center;
   color: black;
@@ -322,10 +301,6 @@ p {
     no-repeat;
 }
 
-/*.clear {
-  clear: both;
-}*/
-
 /*KUVAT*/
 
 #picture {
@@ -343,10 +318,6 @@ p {
   width: 35vh;
 }
 
-/*#leftpicture {
-  display: flex;
-  justify-content: left;
-}*/
 #taustis {
   background-image: url(meditation.jpg);
   height: 30vh;
@@ -392,7 +363,6 @@ ion-icon {
   left: 0;
   right: 0;
   bottom: 0;
-  /*background: url("background.jpg");*/
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -410,8 +380,6 @@ ion-icon {
   backdrop-filter: blur(10px);
   padding: 2.5rem 2rem 3.5rem;
   width: 26.25rem;
-  /*display: flex;
-  justify-content: center;*/
   margin: auto;
 }
 /* TITLE */
@@ -562,12 +530,6 @@ ion-icon {
   border-bottom: 2px solid floralwhite;
 }
 
-/* .styled-table tbody tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-} */
-
-.styled-table tbody tr:last-of-type {
-}
 .styled-table tbody tr.active-row {
   font-weight: bold;
   color: #009879;
@@ -625,7 +587,7 @@ ion-icon {
   border-radius: 5px;
   cursor: pointer;
 }
-
+/*Nappuloiden Hoverit*/
 .check {
   border-radius: 5px;
   padding: 0.3rem 0.6rem;

@@ -205,16 +205,33 @@ document.addEventListener("DOMContentLoaded", () => {
 // Funktio stressiviestin generoimiseen
 function generateStressMessage(averageStressIndex) {
   let message = "";
+  let treatmentSuggestion = "";
+
   if (averageStressIndex < 10) {
     message = "Stressi-indeksi on alle 10, olet hyvällä mallilla!";
   } else if (averageStressIndex >= 10 && averageStressIndex <= 20) {
     message = "Stressi-indeksi on koholla, ota hieman rennommin.";
+    treatmentSuggestion = generateRandomTreatmentSuggestion();
   } else {
-    message =
-      "Stressi-indeksi on yli 20, sinun kannattaa ottaa välittömästi itsellesi aikaa ja harkita rentoutumista.";
+    message = "Stressi-indeksi on yli 20, sinun kannattaa ottaa välittömästi itsellesi aikaa ja harkita rentoutumista.";
+    treatmentSuggestion = generateRandomTreatmentSuggestion();
   }
-  return message;
+
+  return `${message} ${treatmentSuggestion}`;
 }
+
+function generateRandomTreatmentSuggestion() {
+  const suggestions = [
+    "Hengitä syvään. Hengitysharjoitukset ja syvään hengittäminen voivat auttaa vähentämään jännitystä ja lieventämään stressiä. Lisähappi vilkastuttaa parasympaattista hermostoa, mikä saa sydämen sykkeen hidastumaan ja hengityksen rauhoittumaan. Stressioireena pinnallinen, tiheä hengitys tekee päinvastoin, se kiihdyttää sympaattista hermostoa.",
+    "Kokeile akupistekikkaa. Paina peukalolla etu- ja keskisormen välissä olevaa pistettä, jossa sormi kohtaa kämmenen. Tämä Naam Yogasta lainattu kikka aktivoi hermon, joka hellittää sydäntä ympäröivää aluetta. Näin levottomuus ja hermostuneisuus katoavat.",
+    "Käy 10 minuutin mittaisella kävelylenkillä. Kävely auttaa selvittämään päätä ja tehostaa endorfiinien eritystä, mikä itsessään jo vähentää stressihormoneja. Tutkimusten mukaan kävely puistossa tai missä tahansa vihreällä alueella saa aivot menemään meditatiiviseen tilaan. Kävely puistossa auttaa myös keskittymään."
+  ];
+
+  const randomIndex = Math.floor(Math.random() * suggestions.length);
+  return suggestions[randomIndex];
+}
+
+
 
 async function showUserName() {
   console.log("Täällä ollaan!");
