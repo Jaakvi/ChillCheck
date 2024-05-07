@@ -242,6 +242,7 @@ function logOut(evt) {
   window.location.href = "kirjautuminen.html";
 }
 
+// Funktio sivun alaspäin vierittämiseen
 function scrollPageDown() {
   window.scrollTo({
     top: document.body.scrollHeight,
@@ -250,4 +251,4 @@ function scrollPageDown() {
 }
 showUserName();
 
-// Funktio sivun alaspäin vierittämiseen
+

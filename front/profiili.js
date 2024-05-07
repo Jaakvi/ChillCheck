@@ -1,37 +1,41 @@
 import { fetchData } from "./fetch.js";
 
-// Add an event listener for when the DOM content is loaded
+// Lisätään toimenpiteet, kun DOM-sisältö on ladattu
 document.addEventListener("DOMContentLoaded", () => {
-  // Call getProfile function when the DOM content is loaded
+  // Kutsutaan getProfile-funktiota, kun DOM-sisältö on ladattu
   getProfile();
 });
 
+// Funktio, joka hakee käyttäjäprofiilin tiedot
 async function getProfile() {
   console.log("Haetaan profiilitiedot");
 
+  // Määritellään profiilitietojen hakupyyntöjen URL
   const url = "http://127.0.0.1:3000/api/kubios/user-info";
-  let tokeni = localStorage.getItem("token");
+  let tokeni = localStorage.getItem("token"); // Haetaan token selaimen muistista
 
+  // Määritellään HTTP-pyynnön asetukset
   const options = {
-    method: "GET",
+    method: "GET", // HTTP-pyynnön tyyppi
     headers: {
-      Authorization: "Bearer " + tokeni,
+      Authorization: "Bearer " + tokeni, // Lisätään token otsikkoon
     },
   };
 
-  // Clear previous data in console
+  // Tyhjennetään edellinen data konsolista
   console.clear();
 
+  // Kutsutaan fetchData-funktiota ja käsitellään palautettu data
   fetchData(url, options).then((data) => {
-    // Update the DOM to display profile information
-    console.log(data.user);
+    // Päivitetään DOM näyttämään profiilitiedot
+    console.log(data.user); // Tulostetaan käyttäjän tiedot konsoliin
     const etunimiValue = data.user.given_name;
     const sukunimiValue = data.user.family_name;
     const sahkopostiValue = data.user.email;
     const pituusValue = data.user.height;
     const painoValue = data.user.weight;
 
-    // Set values into respective elements
+    // Asetetaan arvot vastaaviin elementteihin
     document.querySelector(".firstname--input").value = etunimiValue;
     document.querySelector(".lastname--input").value = sukunimiValue;
     document.querySelector(".email--input").value = sahkopostiValue;
