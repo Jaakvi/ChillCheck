@@ -102,18 +102,19 @@ Authorization: Bearer <token>
 <h3><b>Frontend UI<b></h3>
 
 
-![Front page](Indexhtml.png)
+![Front page](etusivu.png)
 
-![Login page](loginpage.png)
+![Login page](login.png)
 
-![Registeration page](registeration.png)
+![Home page](kotisivu.png)
 
-![Profile Page](profilepage1.png)
+![Home page](mittausohjeet.png)
 
-![Pofile Page](profilepage2.png)
+![History page](stressi-index.png)
 
-![Profile Page](profilepage3.png)
-
+![History page](historia_stressi.png)
+![History page](tulokset.png)
+![Profiili](profiili.png)
 
 <h3><b>Known bugs:<b></h3>
 
@@ -121,6 +122,7 @@ Authorization: Bearer <token>
 1. Some graphical anomalies might happen
 
 <h3><b>To be implemented:<b></h3>
+
 - Updating user information in kubios
 - professional verification
 - measurement values to database
@@ -128,6 +130,15 @@ Authorization: Bearer <token>
 
 
 <h3><b>Refrences:<b></h3>
+
+- Forms style (https://medium.com/@bijanrai/rsponsive-animated-login-form-in-html-css-javascript-43b55a8adedb)
+- [Banner picture](https://www.google.com/search?q=meditation+in+sunset&sca_esv=87522dea2824ff52&rlz=1C1CHBD_fiFI1081FI1083&udm=2&biw=1280&bih=585&ei=zgg6ZoulPOuzwPAP6MuTkAw&ved=0ahUKEwiLxKHHsPuFAxXrGRAIHejlBMIQ4dUDCBA&uact=5&oq=meditation+in+sunset&gs_lp=Egxnd3Mtd2l6LXNlcnAiFG1lZGl0YXRpb24gaW4gc3Vuc2V0MgcQABiABBgTSLw-UABYqztwAngAkAEAmAE9oAHNB6oBAjIxuAEDyAEA-AEBmAIWoAKLCKgCAMICChAAGIAEGEMYigXCAgUQABiABMICBBAAGAPCAggQABiABBixA8ICCxAAGIAEGLEDGIMBwgIEEAAYHpgDAZIHAjIyoAe7VA&sclient=gws-wiz-serp#vhid=jS2Xq6I-vUEE-M&vssid=mosaic)
+- [Front page picture](https://www.google.com/search?q=meditation+of+human&sca_esv=87522dea2824ff52&rlz=1C1CHBD_fiFI1081FI1083&udm=2&biw=1280&bih=585&ei=Hwo6ZuuMD9POwPAPufWx-Aw&ved=0ahUKEwirmM3nsfuFAxVTJxAIHbl6DM8Q4dUDCBA&uact=5&oq=meditation+of+human&gs_lp=Egxnd3Mtd2l6LXNlcnAiE21lZGl0YXRpb24gb2YgaHVtYW5I3SJQgQZYvCBwAXgAkAEAmAE4oAG6A6oBATm4AQPIAQD4AQGYAgagApQCwgIKEAAYgAQYQxiKBcICBRAAGIAEwgIEEAAYHsICBxAAGIAEGBPCAgYQABgIGB6YAwCIBgGSBwE2oAfPGA&sclient=gws-wiz-serp#vhid=R3mFPnZpd5zCsM&vssid=mosaic)
+
+- [Login page picture](https://www.google.com/search?q=stress+free&sca_esv=4d50ecf86976fd48&rlz=1C1CHBD_fiFI1081FI1083&udm=2&biw=1263&bih=673&ei=vlM6ZrHGDee7wPAP4JOmkAY&ved=0ahUKEwixncWC-PuFAxXnHRAIHeCJCWIQ4dUDCBA&uact=5&oq=stress+free&gs_lp=Egxnd3Mtd2l6LXNlcnAiC3N0cmVzcyBmcmVlMgUQABiABDIEEAAYHjIEEAAYHjIEEAAYHjIEEAAYHjIEEAAYHjIEEAAYHjIEEAAYHjIEEAAYHjIEEAAYHkj5F1AAWNwWcAF4AJABAJgBTaABiAWqAQIxMbgBA8gBAPgBAZgCC6ACyQWoAgDCAgoQABiABBhDGIoFwgIIEAAYgAQYsQPCAg4QABiABBixAxiDARiKBcICCxAAGIAEGLEDGIMBwgIEEAAYA5gDApIHAjExoAfeNA&sclient=gws-wiz-serp#vhid=z1I4EiH9HdnKZM&vssid=mosaic)
+
+- [Hoitoehdotukset saatu tästä](https://yle.fi/aihe/artikkeli/2013/09/13/20-tapaa-helpottaa-akillista-stressia)
+
 
 
 
