@@ -24,6 +24,7 @@ nav {
     background-color: rgb(196, 175, 175);
     background-color: rgb(233, 136, 103);*/
   z-index: 999;
+  
   position: relative;
   background-color: hsla(0, 0%, 10%, 0.315);
   border: 2px solid hsl(0, 0%, 90%);
@@ -34,6 +35,12 @@ nav {
   display: flex;
   /*padding: 2.5rem 2rem 3.5rem;
   width: 26.25rem;*/
+}
+
+nav:after {
+  content: "";
+  clear: both;
+  display: table;
 }
 
 a {
@@ -68,24 +75,29 @@ body {
 section {
   display: flex;
   justify-content: center;
-  margin: 30px;
+  margin: 10px;
+  line-height: 25px;
 }
 
 #instructions {
   display: flex;
   justify-content: left;
+  width: 80%;
 }
 
 li {
   display: flex;
-  margin: 10px;
+  margin: 30px;
   color: white;
+  /*text-align: center;*/
 }
 
 p {
   display: flex;
   text-align: center;
   color: white;
+  line-height: 35px;
+  
 }
 
 h1 {
@@ -106,6 +118,7 @@ h2 {
 h3 {
   display: flex;
   justify-content: flex-start;
+  margin-top: 35px;
   margin-left: 40px;
   margin-bottom: 20px;
   color: white;
@@ -132,7 +145,7 @@ p {
 }
 
 #logout {
-  margin-left: auto;
+  /*margin-left: auto;*/
   color: white;
   width: 100px;
   background: rgb(219, 165, 56);
@@ -164,7 +177,21 @@ p {
   align-items: center;
   margin-left: 40px;
   margin-bottom: 15px;
+  cursor: pointer;
+}
 
+#get_result:hover {
+  background-color: rgb(174, 117, 227);
+  background-color: hsl(0, 48%, 55%);
+  background: rgb(219, 165, 56);
+  background: linear-gradient(
+    68deg,
+    rgba(219, 165, 56, 1) 0%,
+    rgba(240, 126, 126, 1) 50%,
+    rgba(126, 111, 138, 1) 77%
+  );
+  color: black;
+  font-weight: bold;
 }
 
 #loading-overlay {
@@ -191,7 +218,7 @@ p {
   z-index: 1000;
 }
 
-#myChart{
+#myChart {
   background-color: white;
 }
 #chart-container {
@@ -205,14 +232,12 @@ p {
   border-radius: 5px; /* Optional border radius */
   overflow: hidden; /* Hide overflow */
   position: relative; /* Positioning context for canvas */
-
 }
 
 #chart-container div {
   flex: 1; /* Equal width for each chart */
   padding: 10px; /* Add padding for spacing */
   padding-bottom: 10px;
-
 }
 #chart-container {
   margin: auto; /* Voit säätää arvoa tarpeen mukaan */
@@ -220,13 +245,11 @@ p {
   margin-top: 20px;
 }
 
-
 #chart-container canvas {
   width: 100%;
   height: 100%;
   display: block; /* Ensure canvas fills its container */
 }
-
 
 #loading-dialog p {
   text-align: center;
@@ -260,6 +283,7 @@ p {
 }
 
 #profile {
+  margin-left: auto;
   color: white;
   width: 100px;
   background: rgb(219, 165, 56);
@@ -285,18 +309,23 @@ p {
     no-repeat;
 }
 
+/*.clear {
+  clear: both;
+}*/
+
 /*KUVAT*/
 
 #picture {
   display: flex;
   justify-content: center;
+  margin: 3vh;
+  
 }
 
 #historypage_picture {
   display: flex;
   align-items: end;
   justify-content: center;
-
 }
 #meditating {
   width: 35vh;
@@ -306,6 +335,16 @@ p {
   display: flex;
   justify-content: left;
 }*/
+#taustis {
+  background-image: url(meditation.jpg);
+  height: 30vh;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-bottom-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  margin: 0px;
+}
 
 #human_meditating {
   width: 35vh;
@@ -328,7 +367,6 @@ ion-icon {
   position: relative;
   width: 100%;
   height: 100vh;
-
   display: grid;
   align-items: center;
   justify-content: center;
@@ -356,11 +394,13 @@ ion-icon {
   background-color: hsla(0, 0%, 10%, 0.315);
   border: 2px solid hsl(0, 0%, 90%);
   color: hsla(0, 0%, 100%, 0.897);
-
   border-radius: 1.5rem;
   backdrop-filter: blur(10px);
   padding: 2.5rem 2rem 3.5rem;
   width: 26.25rem;
+  /*display: flex;
+  justify-content: center;*/
+  margin: auto;
 }
 /* TITLE */
 .title {
@@ -486,7 +526,14 @@ ion-icon {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 .styled-table thead tr {
-  background-color: hsl(216, 67%, 19%);
+  background-color: hsl(0, 48%, 55%);
+  background: rgb(219, 165, 56);
+  background: linear-gradient(
+    68deg,
+    rgba(219, 165, 56, 1) 0%,
+    rgba(240, 126, 126, 1) 50%,
+    rgba(126, 111, 138, 1) 77%
+  );
   color: #ffffff;
   text-align: left;
 }
@@ -494,12 +541,13 @@ ion-icon {
 .styled-table th,
 .styled-table td {
   padding: 12px 15px;
-  border-left: 3px solid black;
-  border-right: 3px solid black;
+  border-left: 2px solid floralwhite;
+  border-right: 2px solid floralwhite;
+  color: white;
 }
 
 .styled-table tbody tr {
-  border-bottom: 3px solid black;
+  border-bottom: 2px solid floralwhite;
 }
 
 /* .styled-table tbody tr:nth-of-type(even) {
@@ -524,8 +572,9 @@ ion-icon {
   font-size: 1em;
   font-family: sans-serif;
   background-color: #007bff;
+  background-color: rgb(131, 109, 152);
   color: #fff;
-  border: none;
+  border: 2px solid floralwhite;
   border-radius: 5px;
   cursor: pointer;
   transition: background-color 0.3s;
@@ -533,4 +582,13 @@ ion-icon {
 
 .get_users:hover {
   background-color: #0056b3;
+  background-color: hsl(0, 48%, 55%);
+  background: rgb(219, 165, 56);
+  background: linear-gradient(
+    68deg,
+    rgba(219, 165, 56, 1) 0%,
+    rgba(240, 126, 126, 1) 50%,
+    rgba(126, 111, 138, 1) 77%
+  );
+  color: black;
 }
