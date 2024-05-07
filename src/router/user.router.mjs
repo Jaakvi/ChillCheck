@@ -31,7 +31,7 @@ userRouter.route('/')
    * @apiSuccess {String} user.user_level Userlevel of the User.
    *
    */
-    // User re
+    // User registeration
   .post(
     body('username').trim().isLength({min: 3, max:30}).isAscii(),
     body('Firstname').trim().isLength({min:2, max: 20}).isAscii(),

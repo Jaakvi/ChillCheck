@@ -51,7 +51,7 @@ const kubiosRouter = express.Router();
             "result_id": "213136ba-050a-4b9f-8b4d-24ac2d4cfd19",
             "result_type": "readiness"
         },
-  * @apiSuccess [array] results that include resutls of the measurment
+  * @apiSuccess [array] results that include results of the measurment
   * @apiErrorExample {json} Error-response unauthorized token invalid or old 403:
     *{
     "message": "invalid token"
