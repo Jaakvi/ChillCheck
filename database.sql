@@ -48,14 +48,14 @@ CREATE TABLE ProfessionalHistory (
     pro_id INT NOT NULL,
     Firstname TEXT(30) NOT NULL,
     Lastname TEXT(30) NOT NULL,
-    dosage VARCHAR(50),
-    frequency VARCHAR(50),
-    start_date DATE,
-    end_date DATE,
+    test_id INT NOT NULL,
     FOREIGN KEY (user_id) REFERENCES Users(user_id),
-    FOREIGN KEY (pro_id) REFERENCES  Professionals(pro_id)
-);
+    FOREIGN KEY (pro_id) REFERENCES  Professionals(pro_id),
+    FOREIGN KEY (Firstname) REFERENCES  Users(Firstname),
+    FOREIGN KEY (Lastname) REFERENCES  Users(Lastname),
+     FOREIGN KEY (test_id) REFERENCES StressHistory(test_id)
 
+);
 
 
 Insert into Users(username, Firstname, Lastname, password, email, user_level) values
