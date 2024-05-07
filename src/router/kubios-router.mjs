@@ -11,7 +11,7 @@ const kubiosRouter = express.Router();
    * @apiPermission token
    * @apiSuccessExample {json} Success-Response
    * {
-    "results": [
+    results": [
         {
             "create_timestamp": "2024-02-09T08:40:57.445402+00:00",
             "daily_result": null,
@@ -35,6 +35,23 @@ const kubiosRouter = express.Router();
                     "VLF_power_prc": 12.43319584254917,
                     "tot_power": 385.9369341632949
                 },
+                "mean_hr_bpm": 61.59545371800872,
+                "mean_rr_ms": 974.0978656426025,
+                "pns_index": -0.18524754700382892,
+                "readiness": 62.5,
+                "recovery": 62.5,
+                "respiratory_rate": 7.16,
+                "rmssd_ms": 25.42644515775738,
+                "sd1_ms": 18.046375575058658,
+                "sd2_ms": 32.79494825201846,
+                "sdnn_ms": 26.425617711159493,
+                "sns_index": 0.5293473600094027,
+                "stress_index": 14.660666125666104
+            },
+            "result_id": "213136ba-050a-4b9f-8b4d-24ac2d4cfd19",
+            "result_type": "readiness"
+        },
+  * @apiSuccess [array] results that include resutls of the measurment
   * @apiErrorExample {json} Error-response unauthorized token invalid or old 403:
     *{
     "message": "invalid token"

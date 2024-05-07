@@ -19,7 +19,7 @@
 
   "apidoc": {
     "title": "Chillcheckapi",
-    "url": "https://hyte-server-aura.northeurope.cloudapp.azure.com/api/",
+    "url": "https://hyte-server-aura.northeurope.cloudapp.azure.com/api",
     "order": [
       "Kubios"
     ]

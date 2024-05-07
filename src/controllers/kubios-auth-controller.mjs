@@ -96,6 +96,7 @@ const kubiosUserInfo = async (idToken) => {
 
 /**
 * Sync Kubios user info with local db
+* Will be used eventually, not it is disconnected to allow login without db
 * @async
 * @param {object} kubiosUser User info from Kubios API
 * @return {number} userId User id in local db
@@ -172,4 +173,4 @@ const getMe = async (req, res) => {
   res.json({user, kubios_token: req.user.kubiosIdToken});
 };
 
-export {postLogin, getMe}
+export {postLogin}
