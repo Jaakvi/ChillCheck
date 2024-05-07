@@ -1,4 +1,6 @@
+import { fetchData } from "./fetch.js";
 import Chart from "chart.js/auto";
+
 
 document.addEventListener("DOMContentLoaded", () => {
   const getResultButton = document.getElementById("get_result");
@@ -210,14 +212,6 @@ function generateStressMessage(averageStressIndex) {
   return message;
 }
 
-// Haetaan viestilaatikko ja stressi-indeksi
-const messageBox = document.getElementById("stress-message");
-const stressIndex = averageStressIndex; // Oletan, että averageStressIndex on jo määritelty muualla
-
-// Generoidaan viesti ja asetetaan se viestilaatikkoon
-const message = generateStressMessage(stressIndex);
-messageBox.textContent = message;
-
 async function showUserName() {
   console.log("Täällä ollaan!");
   const url = "http://127.0.0.1:3000/api/kubios/user-info";
@@ -231,6 +225,7 @@ async function showUserName() {
   };
   fetchData(url, options).then((data) => {
     // käsitellään fetchData funktiosta tullut JSON
+    console.log(data.user.given_name);
     document.getElementById("nimi").innerHTML =
       ", " + data.user.given_name + "!";
   });
