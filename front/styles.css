@@ -249,7 +249,21 @@ p {
   height: 100%;
   display: block; /* Ensure canvas fills its container */
 }
-
+/* puhekupla */
+#stress-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20vh;
+  width: 70%; /* Pienennetty leveys */
+  height: 70%; /* Pienennetty korkeus */
+  background-color: white;
+  border-radius: 15px; /* Pyöreät reunat */
+  padding: 20px; /* Lisää paddingia */
+  margin:auto;
+  margin-bottom: 2vh;
+}
 #loading-dialog p {
   text-align: center;
   color: black;
