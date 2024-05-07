@@ -1,7 +1,6 @@
 import { fetchData } from "./fetch.js";
 import Chart from "chart.js/auto";
 
-
 document.addEventListener("DOMContentLoaded", () => {
   const getResultButton = document.getElementById("get_result");
   const loadingOverlay = document.getElementById("loading-overlay");
@@ -196,6 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
     chartContainer.style.display = "block";
     fetchData();
     scrollPageDown();
+
   });
 });
 
@@ -239,12 +239,12 @@ function logOut(evt) {
   window.location.href = "kirjautuminen.html";
 }
 
-showUserName();
-
-// Funktio sivun alaspäin vierittämiseen
 function scrollPageDown() {
   window.scrollTo({
     top: document.body.scrollHeight,
-    behavior: 'smooth'
+    behavior: "smooth",
   });
 }
+showUserName();
+
+// Funktio sivun alaspäin vierittämiseen
