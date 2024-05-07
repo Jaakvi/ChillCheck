@@ -1,36 +1,41 @@
-<!DOCTYPE html >
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Historia</title>
-    <script type="module" crossorigin src="./assets/history-Cj88D687.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/modulepreload-polyfill-B5Qt9EMX.js">
-    <link rel="modulepreload" crossorigin href="./assets/fetch-CGUiTqyx.js">
-    <link rel="stylesheet" crossorigin href="./assets/styles-BGZmrqur.css">
+    <title>Historia</title>
+    <script type="module" crossorigin src="./assets/history-B4HjL6YD.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/fetch-BAm4Q6xJ.js">
+    <link rel="stylesheet" crossorigin href="./assets/styles-cVhQDJAm.css">
   </head>
   <body>
     <header>
       <nav>
-        <button id="profile"> <a href="profiili.html"> Profiili </a> </button>
-        <button id="history"> <a href="historia.html"> Historia </a> </button>
-        <button id="homepage"> <a href="kotisivu.html"> Kotisivu </a> </button>
-        <button id="logout"> <a href="kirjautuminen.html"> Kirjaudu ulos </a> </button>
+        <button id="homepage"><a href="kotisivu.html"> Kotisivu </a></button>
+        <button id="history"><a href="historia.html"> Historia </a></button>
+        <button id="profile"><a href="profiili.html"> Profiili </a></button>
+        <button id="logout">
+          <a href="kirjautuminen.html"> Kirjaudu ulos </a>
+        </button>
       </nav>
     </header>
     <main>
       <h1>ChillCheck</h1>
 
-    <div>
-      <h3>Stressi indeksi </h3>
-       <p> Viitearvot stressi-indeksille voivat vaihdella eri ihmisillä
-         ja eri tilanteissa. Yleensä stressi-indeksin arvojen
-         tulkinnassa on hyvä ottaa huomioon yksilölliset erot ja
-         tilanteen konteksti.Stressitasot voivat vaihdella päivästä toiseen riippuen eri tekijöistä,
-         kuten unen laadusta, fyysisestä aktiivisuudesta, ja psyykkisestä hyvinvoinnista.
-         Tulostamme taulukon, jossa näkyy kaikki tehdyt testit ja niiden stressi-indeksit.
-         Tämä auttaa käyttäjiä hahmottamaan stressitasojensa vaihtelut ajan mittaan ja tunnistamaan mahdollisia stressitekijöitä elämässään. </p>
-        <h3> Historia </h3>
+      <div>
+        <h2>Stressi indeksi</h2>
+        <p>
+          Viitearvot stressi-indeksille voivat vaihdella eri ihmisillä ja eri
+          tilanteissa. Yleensä stressi-indeksin arvojen tulkinnassa on hyvä
+          ottaa huomioon yksilölliset erot ja tilanteen konteksti.Stressitasot
+          voivat vaihdella päivästä toiseen riippuen eri tekijöistä, kuten unen
+          laadusta, fyysisestä aktiivisuudesta, ja psyykkisestä hyvinvoinnista.
+          Tulostamme taulukon, jossa näkyy kaikki tehdyt testit ja niiden
+          stressi-indeksit. Tämä auttaa käyttäjiä hahmottamaan stressitasojensa
+          vaihtelut ajan mittaan ja tunnistamaan mahdollisia stressitekijöitä
+          elämässään.
+        </p>
+        <h3>Historia</h3>
         <table class="styled-table">
           <thead>
             <!-- Käytetään Timestamp, (freq domain LF power_nu, LF power prc, RESULTS Stress_index) -->
@@ -50,11 +55,16 @@
 
         <button class="get_users">Hae historiatiedot</button>
       </div>
-    </div>
-
+      <dialog id="notesDialog" class="notes-dialog">
+        <div class="rivitys">
+          <h4 id="header"></h4>
+          <p id="dialogText"></p>
+        </div>
+        <button id="closeNotes" class="close_notes">Sulje</button>
+      </dialog>
     </main>
-    <div id="historypage_picture">
-      <img src="./assets/medor-BNSGgY3Z.jpg" alt="human" id="human_meditating" />
-    </div>
+    <!-- <div id="historypage_picture">
+      <img src="medor.jpg" alt="human" id="human_meditating" />
+    </div>-->
   </body>
 </html>
