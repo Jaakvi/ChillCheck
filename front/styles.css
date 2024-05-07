@@ -97,7 +97,6 @@ p {
   text-align: center;
   color: white;
   line-height: 35px;
-
 }
 
 h1 {
@@ -319,7 +318,6 @@ p {
   display: flex;
   justify-content: center;
   margin: 3vh;
-
 }
 
 #historypage_picture {
@@ -636,4 +634,19 @@ ion-icon {
     rgba(126, 111, 138, 1) 77%
   );
   color: black;
+}
+
+#stress-message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20vh;
+  width: 70%;
+  height: 70%;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  margin: auto;
+  margin-bottom: 2vh;
 }

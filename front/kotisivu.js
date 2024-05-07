@@ -6,9 +6,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadingOverlay = document.getElementById("loading-overlay");
   const loadingDialog = document.getElementById("loading-dialog");
   const chartContainer = document.getElementById("chart-container");
+  const hoitomessage = document.getElementById("stress-message");
 
   // Piilota chart-container
   chartContainer.style.display = "none";
+  hoitomessage.style.display = "none"
   // Function to reset the console
   function resetConsole() {
     console.clear(); // Clear console
@@ -167,11 +169,12 @@ document.addEventListener("DOMContentLoaded", () => {
             new Chart(ctx, config);
 
             // Haetaan viestilaatikko ja stressi-indeksi
-            const messageBox = document.getElementById("stress-message");
+
 
             // Generoidaan viesti ja asetetaan se viestilaatikkoon
+            hoitomessage.style.display = "block"
             const message = generateStressMessage(averageStressIndex);
-            messageBox.textContent = message;
+            hoitomessage.textContent = message;
           } else {
             console.error("Canvas-elementtiä ei löytynyt.");
           }
