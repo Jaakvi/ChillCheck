@@ -195,6 +195,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Näytä chart-container nappulaa painaessa
     chartContainer.style.display = "block";
     fetchData();
+    scrollPageDown();
   });
 });
 
@@ -239,3 +240,11 @@ function logOut(evt) {
 }
 
 showUserName();
+
+// Funktio sivun alaspäin vierittämiseen
+function scrollPageDown() {
+  window.scrollTo({
+    top: document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+}
