@@ -1,4 +1,3 @@
-import { fetchData } from "./fetch.js";
 import Chart from "chart.js/auto";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -6,9 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const loadingOverlay = document.getElementById("loading-overlay");
   const loadingDialog = document.getElementById("loading-dialog");
   const chartContainer = document.getElementById("chart-container");
-
+  const hoitomessage = document.getElementById("stress-message")
   // Piilota chart-container
   chartContainer.style.display = "none";
+  hoitomessage.style.display = "none"
   // Function to reset the console
   function resetConsole() {
     console.clear(); // Clear console
@@ -65,9 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
           // Haetaan päivämäärät testien päivämääräksi
           const testDates = data.results
             .slice(-3)
-            .map((item) =>
-              new Date(item.create_timestamp).toLocaleDateString()
-            );
+            .map((item) => new Date(item.create_timestamp).toLocaleDateString());
 
           // Hae canvas-elementti
           const canvas = document.getElementById("myChart");
@@ -164,14 +162,13 @@ document.addEventListener("DOMContentLoaded", () => {
               },
             };
 
-            new Chart(ctx, config);
 
-            // Haetaan viestilaatikko ja stressi-indeksi
-            const messageBox = document.getElementById("stress-message");
+            new Chart(ctx, config);
 
             // Generoidaan viesti ja asetetaan se viestilaatikkoon
             const message = generateStressMessage(averageStressIndex);
-            messageBox.textContent = message;
+            hoitomessage.textContent = message;
+            hoitomessage.style.display = "block"
           } else {
             console.error("Canvas-elementtiä ei löytynyt.");
           }
@@ -181,12 +178,12 @@ document.addEventListener("DOMContentLoaded", () => {
           clearLoadingDialog();
           console.clear();
           loadingDialog.innerHTML = `<p>Virhe datan hakemisessa: ${error}</p>`;
-          setTimeout(() => {
-            loadingOverlay.style.display = "none";
-            loadingDialog.style.display = "none";
-          }, 2000);
-        });
-    }, 2000); // Simuloi latausta 5 sekunnin ajan
+      setTimeout(() => {
+        loadingOverlay.style.display = "none";
+        loadingDialog.style.display = "none";
+      }, 2000);
+    });
+}, 2000); // Simuloi latausta 5 sekunnin ajan
   }
 
   // Event listener for Get Result button
@@ -194,8 +191,6 @@ document.addEventListener("DOMContentLoaded", () => {
     // Näytä chart-container nappulaa painaessa
     chartContainer.style.display = "block";
     fetchData();
-    scrollPageDown();
-
   });
 });
 
@@ -207,30 +202,19 @@ function generateStressMessage(averageStressIndex) {
   } else if (averageStressIndex >= 10 && averageStressIndex <= 20) {
     message = "Stressi-indeksi on koholla, ota hieman rennommin.";
   } else {
-    message =
-      "Stressi-indeksi on yli 20, sinun kannattaa ottaa välittömästi itsellesi aikaa ja harkita rentoutumista.";
+    message = "Stressi-indeksi on yli 20, sinun kannattaa ottaa välittömästi itsellesi aikaa ja harkita rentoutumista.";
   }
   return message;
 }
 
-async function showUserName() {
-  console.log("Täällä ollaan!");
-  const url = "http://127.0.0.1:3000/api/kubios/user-info";
-  let tokeni = localStorage.getItem("token");
+// Haetaan viestilaatikko ja stressi-indeksi
+const messageBox = document.getElementById("stress-message");
+const stressIndex = averageStressIndex; // Oletan, että averageStressIndex on jo määritelty muualla
 
-  const options = {
-    method: "GET", // *GET, POST, PUT, DELETE, etc.
-    headers: {
-      Authorization: "Bearer: " + tokeni,
-    },
-  };
-  fetchData(url, options).then((data) => {
-    // käsitellään fetchData funktiosta tullut JSON
-    console.log(data.user.given_name);
-    document.getElementById("nimi").innerHTML =
-      ", " + data.user.given_name + "!";
-  });
-}
+// Generoidaan viesti ja asetetaan se viestilaatikkoon
+const message = generateStressMessage(stressIndex);
+messageBox.textContent = message;
+
 
 function logOut(evt) {
   evt.preventDefault();
@@ -238,13 +222,3 @@ function logOut(evt) {
   console.log("Kirjaudutaan ulos");
   window.location.href = "kirjautuminen.html";
 }
-
-function scrollPageDown() {
-  window.scrollTo({
-    top: document.body.scrollHeight,
-    behavior: "smooth",
-  });
-}
-showUserName();
-
-// Funktio sivun alaspäin vierittämiseen
