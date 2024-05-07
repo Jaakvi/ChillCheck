@@ -55,8 +55,8 @@ userRouter.route('/:id')
    * @apiGroup Users
    * @apiPermission token
    * @apiParam {number} users id
-   * will be implemented to work with kubios
    */
+  //  will be implemented to work with kubios
   .put(authenticateToken,putUser)
 
   // get user by id
@@ -66,8 +66,8 @@ userRouter.route('/:id')
    * @apiGroup Users
    * @apiPermission token
    * @apiParam {number} users id
-   * will be implemented to work with kubios
    */
+   //  will be implemented to work with kubios
   .get(authenticateToken,validationErrorHandler,getUserById)
 
   // delete user based on id
@@ -77,9 +77,8 @@ userRouter.route('/:id')
    * @apiGroup Users
    * @apiPermission token
    * @apiParam {number} users id
-   * will be implemented to work with kubios
    */
-  // delete user based on id
+   // will be implemented to work with kubios
   .delete(authenticateToken,deleteUser);
 
 
