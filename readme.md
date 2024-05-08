@@ -16,6 +16,7 @@ Start server: `npm run dev`
 
 - https://github.com/Jaakvi/chillcheck-projekti/tree/frontend/front
 - https://hyte-server-aura.northeurope.cloudapp.azure.com/etusivu.html
+-
 
 
 # <h3><b>/api/auth<b></h3>
@@ -100,7 +101,14 @@ Authorization: Bearer <token>
 ![Database structure](database.png)!
 
 <h3><b>Frontend UI<b></h3>
+<h4><b>Before:<b></h4>
 
+![First pic](rautalanka1.jpg)
+
+![Second pic](rautalanka2.jpg)
+
+
+<h4><b>Now:<b></h4>
 
 ![Front page](etusivu.png)
 
@@ -128,6 +136,9 @@ Authorization: Bearer <token>
 - measurement values to database
 
 
+<h3><b>Robot framework testing<b></h3>
+
+- https://github.com/Jaakvi/chillcheck-projekti/tree/testaus
 
 <h3><b>Refrences:<b></h3>
 
