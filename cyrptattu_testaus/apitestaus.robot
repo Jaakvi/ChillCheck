@@ -3,7 +3,7 @@ Library    RequestsLibrary
 Library    Collections
 Library     Browser    auto_closing_level=SUITE
 Library     CryptoLibrary    variable_decryption=True
-Resource    restful_booker_keywords.resource
+Resource    apitestaus_keywords.resource
 Suite Setup    Authenticate as Admin
 
 *** Variables ***

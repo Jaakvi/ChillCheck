@@ -1,6 +1,5 @@
 *** Settings ***
 Library     Browser    auto_closing_level=Suite
-Resource    Keywords.robot
 Library     CryptoLibrary    variable_decryption=True
 *** Variables ***
 ${username}    crypt:ryTnQQpJF/K1TgIua0I7QDMosGsr7ei4VFju4COSCGDO1D2Q6dcoV8tbBPkpZGidlZfnCVT+P/cTnssFYmjFaNoRxCHSoWvy/yN48bk=
