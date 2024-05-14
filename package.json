@@ -11,15 +11,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "hyteserver"
+    "url": "ChillCheck"
   },
   "author": "AuraSalomaa",
   "license": "ISC",
   "apidoc": {
     "title": "Health Diary API documentation",
-    "url": "http://127.0.0.1/docs",
+    "url": "https://hyte-server-aura.northeurope.cloudapp.azure.com",
     "order": [
-      "Entry"
+
     ]
   },
   "devDependencies": {
