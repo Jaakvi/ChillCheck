@@ -16,8 +16,10 @@ Start server: `npm run dev`
 
 - https://github.com/Jaakvi/chillcheck-projekti/tree/frontend/front
 - https://hyte-server-aura.northeurope.cloudapp.azure.com/etusivu.html
--
 
+<h3><b>api documentation with apidocs:<b></h3>
+
+- https://hyte-server-aura.northeurope.cloudapp.azure.com/docs
 
 # <h3><b>/api/auth<b></h3>
 example queries
